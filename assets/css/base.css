@@ -1,0 +1,31 @@
+:root {
+--text-dark-color:#334047;
+--text-light-color:#73737d;
+
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-2{
+    width: 50%;
+}
