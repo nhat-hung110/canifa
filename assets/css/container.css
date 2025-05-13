@@ -1,7 +1,148 @@
 .container{
-
+    width: 100%;
 }
 
-.container__banner img{
-    width: 100%;
+.content-wrapper{
+width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 7.64vw;
+    padding-right: 7.64vw;
+}
+
+.order-service{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 14px 0 16px;
+border-bottom: 1px solid var(--border-color);
+}
+
+.order-service__item{
+display: flex;
+align-items: center;
+width: 33.333%;
+}
+
+.order-service__item:nth-child(2){
+    justify-content: center;
+}
+
+.order-service__item:nth-child(3){
+    justify-content: end;
+}
+
+.order-service__item-img{
+width: 44px;
+aspect-ratio: 1;
+display: flex;
+align-items: center;
+}
+
+.order-service__content{
+padding-left: 16px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.order-service__item-title{
+font-size: 1.6rem;
+line-height: 2rem;
+font-weight: 700;
+color: var(--text-dark-color);
+}
+
+.order-service__item-text{
+font-size: 1.4rem;
+line-height: 1.8rem;
+color: var(--text-light-color);
+}
+
+/* Voucher */
+.voucher{
+color: var(--text-dark-color);
+}
+
+.voucher__header{
+font-size: 2rem;
+line-height: 2.4rem;
+font-weight: 700;
+padding: 24px 0;
+}
+
+.voucher__list{
+display: flex;
+}
+
+.voucher__item{
+display: flex;
+justify-content: space-between;
+/* border: 1px solid #333; */
+width: 33.333%;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+margin-left: 24px;
+}
+
+.voucher__item-info{
+padding: 14px 20px 14px 12px;
+position: relative;
+width: 66%;
+}
+
+.voucher__item-info::after{
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 2px;
+    border-left: 1px dashed var(--border-color);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.voucher__item-title{
+font-size: 1.6rem;
+font-weight: 700;
+}
+
+.voucher__item-body{
+font-size: 1.4rem;
+line-height: 1.8rem;
+padding: 6px 0 6px 0;
+}
+
+.voucher__item-footer{
+font-size: 1.2rem;
+display: flex;
+justify-content: space-between;
+}
+
+.voucher__item-dated{
+color: var(--text-light-color);
+}
+
+.voucher__item-condition{
+font-weight: 600;
+}
+
+
+.voucher__item-button{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 34%;
+min-width: 100px;
+}
+
+.voucher__item-save-button{
+    font-weight: 700;
+    margin: 14px;
+    padding: 8px 10px;
+    background-color: #63b1bc;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
 }
