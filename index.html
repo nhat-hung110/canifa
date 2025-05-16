@@ -35,7 +35,9 @@
       <div class="nav-bar__wrapper">
         <div class="header__category">
           <div class="header__logo">
-            <a href="./index.html"><img src="./assets/img/index/logo.svg" alt="logo" /></a>
+            <a href="./index.html"
+              ><img src="./assets/img/index/logo.svg" alt="logo"
+            /></a>
           </div>
           <div class="women-product-link">
             <a href="./women_tag.html">
@@ -148,7 +150,7 @@
             </div>
           </div>
           <div class="men-product-link">
-            <a href="">
+            <a href="./men_tag.html">
               <div class="header__category-item men-product">
                 <span>NAM</span>
               </div>
@@ -264,7 +266,7 @@
             </div>
           </div>
           <div class="girl-product-link">
-            <a href="">
+            <a href="./girl_tag.html">
               <div class="header__category-item girl-product">
                 <span>BÉ GÁI</span>
               </div>
@@ -374,7 +376,7 @@
             </div>
           </div>
           <div class="boy-product-link">
-            <a href="">
+            <a href="./boy_tag.html">
               <div class="header__category-item boy-product">
                 <span>BÉ TRAI</span>
               </div>
@@ -490,21 +492,21 @@
             </div>
           </div>
           <div class="new-product-link">
-            <a href="">
+            <a href="./new-product_tag.html">
               <div class="header__category-item">
                 <span>SẢN PHẨM MỚI</span>
               </div>
             </a>
           </div>
           <div class="collection-link">
-            <a href="">
+            <a href="./collection_tag.html">
               <div class="header__category-item">
                 <span>BST EM ƠI EM À</span>
               </div>
             </a>
           </div>
           <div class="canifa-s-link">
-            <a href="">
+            <a href="./canifa-s_tag.html">
               <div class="header__category-item">
                 <span>CANIFA S</span>
               </div>
@@ -521,24 +523,93 @@
             </div>
           </div>
           <div class="header__info">
-            <a href="">
+            <a href="./store-location_tag.html">
               <div class="header__store-location">
                 <i class="fa-solid fa-store"></i>
                 <span class="header__info-text">Cửa hàng</span>
               </div>
             </a>
-            <a href="">
+            <label for="display_user-box">
               <div class="header__user">
                 <i class="fa-regular fa-circle-user"></i>
                 <span class="header__info-text">Tài khoản</span>
               </div>
-            </a>
-            <a href="">
+            </label>
+            <input type="checkbox" id="display_user-box" />
+            <div class="user-box__wrapper">
+              <label class="user-box__background" for="display_user-box">
+              </label>
+              <div class="user-box__box">
+                <div class="user-box__title">
+                  <label for="display_user-box">
+                    <i class="fa-solid fa-x"></i>
+                  </label>
+                </div>
+                <div class="user-box__content">
+                  <img
+                    src="./assets/img/user_box/Slide55-web_desktop.png"
+                    alt=""
+                    class="user-box__img"
+                  />
+                  <div class="user-box__heading">
+                    <span>Đăng nhập</span>
+                  </div>
+                  <div class="user-box__text">
+                    <span
+                      >Đăng nhập miễn phí để trở thành Khách hàng thân thiết và
+                      nhận ưu đãi độc quyền từ CANIFA.</span
+                    >
+                  </div>
+                  <input
+                    class="user-box__input"
+                    type="tel"
+                    placeholder="Vui lòng nhập số điện thoại"
+                    required
+                    pattern="[0-9]{10}"
+                  />
+                  <input
+                    class="user-box__submit"
+                    type="submit"
+                    value="Tiếp tục"
+                  />
+                  <div class="user-box__policy">
+                    <span
+                      >* Khi ấn tiếp tục, bạn xác nhận đã đọc và đồng ý với Điều
+                      khoản dịch vụ cùng Chính sách bảo mật của Canifa.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <label for="display_cart">
               <div class="header__cart">
                 <i class="fa-solid fa-bag-shopping"></i>
                 <span class="header__info-text">Giỏ hàng</span>
               </div>
-            </a>
+            </label>
+            <input type="checkbox" id="display_cart" />
+            <div class="cart__wrapper">
+              <label class="cart__background" for="display_cart"></label>
+              <div class="cart__box">
+                <div class="cart__title">
+                  <span>Giỏ hàng (0)</span>
+                  <label for="display_cart"
+                    ><i class="fa-solid fa-x"></i
+                  ></label>
+                </div>
+                <div class="cart__img">
+                  <img src="./assets/img/cart/cart-empty.png" alt="" />
+                </div>
+                <div class="cart__text">
+                  <span>Hiện chưa có sản phẩm trong giỏ hàng</span>
+                </div>
+                <label for="display_cart">
+                  <div class="cart__button">
+                    <span>Tiếp tục mua sắm</span>
+                  </div>
+                </label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
