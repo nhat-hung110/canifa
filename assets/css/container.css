@@ -196,6 +196,7 @@
 
 .group-product__list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 -14px;
 }
 
@@ -211,28 +212,28 @@
   overflow: hidden;
 }
 
-.product__add{
-color: var(--text-dark-color);
-display: flex;
-justify-content: center;
-width: 92%;
-background-color: rgba(255,255,255, 0.8);
-position: absolute;
-bottom: 4%;
-left: 50%;
-transform: translateX(-50%);
-border-radius: 3px;
-display: none;
+.product__add {
+  color: var(--text-dark-color);
+  display: flex;
+  justify-content: center;
+  width: 92%;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  display: none;
 }
 
-.group-product__item:hover .product__add{
-    display: flex;
+.group-product__item:hover .product__add {
+  display: flex;
 }
 
-.product__add span{
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 10px;
+.product__add span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px;
 }
 
 .product__info {
@@ -297,41 +298,44 @@ display: none;
   background-color: var(--product-white-color);
 }
 
+.product-color--purple {
+  background-color: var(--product-purple-color);
+}
+
 .product__name {
   padding: 8px 0;
-    white-space: nowrap; 
-  overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.product__name:hover{
-    color: var(--product-button-color);
+.product__name:hover {
+  color: var(--product-button-color);
 }
 
 .product__price {
   font-weight: 700;
 }
 
-.product__price span{
-    text-decoration: underline;
+.product__price span {
+  text-decoration: underline;
 }
 
 .group-product__button {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.group-product__button button{
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--product-button-color);
-    border: 1px solid var(--product-button-color);
-    background-color: #fff;
-    padding: 8px 16px;
-    border-radius: 2px;
+.group-product__button button {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--product-button-color);
+  border: 1px solid var(--product-button-color);
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 2px;
 }

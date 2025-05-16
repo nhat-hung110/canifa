@@ -1,19 +1,18 @@
 :root {
---text-dark-color:#334047;
---text-light-color:#73737d;
---border-color: #d2d2d2;
---product-border-color: #e8e8e9;
---product-blue-color:#d5e6f9;
---product-grey-color:#d2d5dd;
---product-navy-color:#333b68;
---product-pink-color:#d6a4a5;
---product-black-color:#000;
---product-white-color:#f3f3f5;
---product-red-color:#c72626;
---product-button-color:#da291c;
-
-
-
+  --text-dark-color: #334047;
+  --text-light-color: #73737d;
+  --border-color: #d2d2d2;
+  --product-border-color: #e8e8e9;
+  --product-blue-color: #d5e6f9;
+  --product-grey-color: #d2d5dd;
+  --product-navy-color: #333b68;
+  --product-pink-color: #d6a4a5;
+  --product-black-color: #000;
+  --product-white-color: #f3f3f5;
+  --product-red-color: #c72626;
+  --product-purple-color: #c7bfd2;
+  --product-button-color: #da291c;
+ 
 }
 
 * {
@@ -23,7 +22,7 @@
 html {
   font-size: 62.5%;
   line-height: 1.6rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   box-sizing: border-box;
 }
@@ -32,7 +31,7 @@ body {
   margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -42,6 +41,6 @@ a{
   justify-content: center;
 }
 
-.col-2{
-    width: 50%;
+.col-2 {
+  width: 50%;
 }

@@ -1,0 +1,129 @@
+.tag-container{
+width: 100%;
+background-color: #fafafa;
+padding-bottom: 50px;
+}
+
+.tag-container__banner{
+width: 100%;
+}
+
+.tag-container__wrapper{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 7.64vw;
+  padding-right: 7.64vw;
+  overflow: hidden;
+}
+
+.tag-nav-bar{
+padding-bottom: 48px;
+border-bottom: 1px solid var(--border-color);
+}
+
+.tag-nav-bar__title{
+font-size: 2rem;
+line-height: 2.8rem;
+font-weight: 700;
+padding: 30px 0 24px;
+}
+
+.tag-nav-bar__list{
+display: flex;
+align-items:start;
+justify-content: space-between;
+}
+
+.tag-nav-bar__icon{
+font-size: 2.4rem;
+color: var(--text-dark-color);
+margin-top: auto;
+margin-bottom: auto;
+transform: translateY(-100%);
+}
+
+.tag-nav-bar__item{
+width: 12.5%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 0 30px;
+}
+
+.tag-nav-bar__item--img{
+width: 100%;
+aspect-ratio: 1;
+}
+
+.tag-nav-bar__item--text{
+text-transform: uppercase;
+font-size: 1.4rem;
+line-height: 1.8rem;
+font-weight: 500;
+counter-reset: var(--text-dark-color);
+padding-top: 14px;
+text-align: center;
+}
+
+/* Tag product */
+.tag-product{
+width: 100%;
+}
+
+.tag-product__title{
+font-size: 2rem;
+line-height: 2.8rem;
+font-weight: 700;
+padding: 30px 0 24px;
+}
+
+.tag-product__content{
+display: flex;
+}
+
+.tag-product__banner{
+width: 33.333%;
+margin-right: 14px;
+}
+
+.tag-product__list{
+display: flex;
+width: 66.667%;
+position: relative;
+overflow: hidden;
+}
+
+.tag-product__list .group-product__item{
+    width: 38%;
+}
+
+.last-item{
+    position: absolute;
+    top: 0;
+    left: 76%;
+}
+
+.tag-product__left-icon,
+.tag-product__right-icon{
+font-size: 1.8rem;
+color: var(--text-dark-color);
+width: 3.5%;
+aspect-ratio: 1;
+background-color: rgba(255, 255,255, 0.5);
+position: absolute;
+z-index: 1;
+top: 35%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.tag-product__left-icon{
+left: 3%;
+}
+
+.tag-product__right-icon{
+right: 2%;
+}

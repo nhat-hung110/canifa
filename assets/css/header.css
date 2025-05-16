@@ -202,7 +202,6 @@ header {
   display: block;
 }
 
-
 .category_product-group {
   width: 85%;
   max-width: 1500px;
@@ -276,7 +275,7 @@ img {
   position: relative;
 }
 
-.category_product--list-item:hover{
+.category_product--list-item:hover {
   color: #d70101;
   cursor: pointer;
 }
@@ -300,4 +299,3 @@ img {
 .category_product-group--third-column img {
   padding: 30px 0 40px 12px;
 }
-
