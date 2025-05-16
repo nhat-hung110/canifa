@@ -302,6 +302,11 @@
   background-color: var(--product-purple-color);
 }
 
+.product-color--green {
+  background-color: var(--product-green-color);
+}
+
+
 .product__name {
   padding: 8px 0;
   white-space: nowrap;
