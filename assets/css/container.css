@@ -224,6 +224,7 @@
   transform: translateX(-50%);
   border-radius: 3px;
   display: none;
+  z-index: 2;
 }
 
 .group-product__item:hover .product__add {
@@ -306,6 +307,9 @@
   background-color: var(--product-green-color);
 }
 
+.product-color--beige {
+  background-color: var(--product-beige-color);
+}
 
 .product__name {
   padding: 8px 0;
