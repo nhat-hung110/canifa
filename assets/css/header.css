@@ -153,7 +153,7 @@ header {
 
 #display_cart:not(:checked) ~ .cart__wrapper,
 #display_user-box:not(:checked) ~ .user-box__wrapper{
-  animation: ;
+
 }
 
 .cart__background,

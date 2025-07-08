@@ -39,6 +39,25 @@
   right: 24px;
 }
 
+.index-banner {
+  position: absolute;
+  bottom: 14px;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.index-banner__item {
+  border: 1px solid #e5e5e5;
+  padding: 4px;
+  margin: 3px;
+  border-radius: 50%;
+}
+
+.index-banner--active {
+  background-color: red;
+}
+
 .container {
   width: 100%;
 }
@@ -287,6 +306,8 @@
 .product__color {
   display: flex;
   padding-top: 10px;
+  position: absolute;
+  transform: translateY(-60px);
 }
 
 .product__color-border {
@@ -353,7 +374,7 @@
 }
 
 .product__name {
-  padding: 8px 0;
+  padding: 8px 0 36px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
