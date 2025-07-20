@@ -1,0 +1,172 @@
+.product-wrapper {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+.product-img {
+  width: 48%;
+  display: flex;
+  height: 100%;
+}
+
+.main-img {
+  flex: 1;
+  margin-right: 14px;
+  height: 100%;
+  position: relative;
+}
+
+.main-img button{
+  position: absolute;
+  padding: 14px;
+  color: #888;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+.main-img button:active{
+background-color: #fff;
+color: #000;
+}
+
+.img-left-btn{
+top: 50%;
+left: 5%;
+}
+
+.img-right-btn{
+top: 50%;
+right: 5%;
+}
+
+.img-list{
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.nav-img {
+  width: 14%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-between;
+}
+
+.nav-img img {
+  object-fit: cover;
+  height: 17%;
+}
+
+.nav-img img.active{
+  border: 2px solid #666;
+  padding: 4px;
+}
+
+.product-info {
+  width: 42%;
+  color: var(--text-dark-color);
+  font-size: 16px;
+}
+
+.product-info img {
+  height: auto;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  padding-bottom: 16px;
+}
+
+.product-price {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  padding-bottom: 16px;
+  color: rgb(223, 0, 0);
+}
+
+.product-color {
+}
+
+.product-color__text {
+  padding: 12px 0;
+}
+
+.product-color__list {
+}
+
+.product-size {
+}
+
+.product-size__text {
+  padding: 12px 0;
+}
+
+.product-size__text span,
+.product-color__text span{
+  font-weight: 500;
+  color: var(--text-dark-color);
+  font-size: 18px;
+}
+
+.product-size__list {
+  display: flex;
+  padding-bottom: 16px;
+}
+
+.product-size__item {
+  padding: 6px;
+  font-weight: 500;
+  border: 1px solid #999;
+  width: 42px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.add-product {
+  background-color: var(--product-button-color);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 2px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.product-delail {
+  padding: 14px 0;
+}
+
+.product-delail::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #666;
+  top: 0;
+  display: flex;
+}
+
+.product-delail__title {
+  padding: 16px 0;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-delail__desc {
+  line-height: 24px;
+}
