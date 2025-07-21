@@ -24,7 +24,9 @@
   border: none;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
+  cursor: pointer;
 }
+
 
 .main-img button:active{
 background-color: #fff;
@@ -65,6 +67,10 @@ right: 5%;
 .nav-img img.active{
   border: 2px solid #666;
   padding: 4px;
+}
+
+.nav-img-item:hover{
+cursor: pointer;
 }
 
 .product-info {
@@ -135,6 +141,15 @@ right: 5%;
   border-radius: 2px;
 }
 
+.product-size__item:hover{
+  cursor: pointer;
+}
+
+.product-size__item:active{
+  background-color: #dcdcdc;
+
+}
+
 .add-product {
   background-color: var(--product-button-color);
   border: none;
@@ -166,8 +181,14 @@ right: 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .product-delail__desc {
   line-height: 24px;
+  display: none;
+}
+
+.product-delail__desc.display{
+  display: block;
 }

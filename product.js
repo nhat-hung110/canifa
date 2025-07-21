@@ -1,9 +1,9 @@
 // 1. Click vào img-item ==> đổi main-img và thêm class active cho img đang click ==> DONE
 // 2. Click vào button trên img ==> đổi main-img và thêm class active cho img đang click ==> done
 // 3. Render ra color-list ==> done
-// 4. Click vào color ==> đổi color-title và đổi ảnh sản phẩm
-// 5. Click vào size ==> đổi size-title
-// 6. Click vào detail-icon ==> đổi icon sang '-' và hiện detail
+// 4. Click vào color ==> đổi color-title và đổi ảnh sản phẩm  ==> done
+// 5. Click vào size ==> đổi size-title ==> done
+// 6. Click vào detail-icon ==> đổi icon sang '-' và hiện detail 
 // 7. Click vào add-btn thì hiện toast "Thêm thành công"
 
 products = [
@@ -12,6 +12,7 @@ products = [
     title: "Áo khoác chống nắng nữ",
     price: "549.000 ₫",
     color: ["navy", "pink", "grey"],
+    size: ['S', 'M', 'L', 'XL'],
     img: [
       [
         "/assets/img/Ao_CN/CN-NU/blue1.webp",
@@ -46,7 +47,9 @@ const rightBtn = $(".img-right-btn");
 const mainImg = $(".main-img img");
 const productTitle = $(".product-title");
 const productPrice = $(".product-price");
+const productSizeTitle = $(".product-size__text span");
 const colorBox = $(".product-color__list");
+const colorTitle = $('.product-color__text span')
 
 let currentIndex = 0;
 let navImgList = [];
@@ -73,6 +76,8 @@ const renderProductImg = (imgs) => {
 const renderProductInfo = (product) => {
   productTitle.textContent = product.title;
   productPrice.textContent = product.price;
+  colorTitle.textContent = product.color[0].split('').map(char => char.toUpperCase()).join('')
+  productSizeTitle.textContent = product.size[0]
 };
 
 // Đổi ảnh chính dựa trên index nav-img
@@ -123,21 +128,74 @@ const renderProductColor = (colors) => {
   colorBox.innerHTML = html;
 };
 
-// Click vào color ==> đổi color-title và đổi ảnh sản phẩm
-// Hàm xử lý thay đổi màu và ảnh
-const handleChangeColor = () => {
+const renderProductSize = (sizes) => {
+  const html = sizes.map((size) => {
+    return `<div class="product-size__item">${size}</div>`
+  }).join('')
+  const productSizeList = $('.product-size__list')
+  productSizeList.innerHTML = html
+}
+
+// Hàm xử lý thay đổi màu và ảnh khi click vào color: 
+const handleChangeColor = (product) => {
   const colorList = $$(".product__color-border");
+  
   colorList.forEach((color) => {
     color.onclick = () => {
       colorList.forEach((c) => c.classList.remove("product__color--current"));
       color.classList.add("product__color--current");
+      
+      // Đổi ảnh
+      let colorIndex = [...colorList].indexOf(color)
+      renderProductImg(products[0].img[colorIndex])
+      handleChangeImg()
+
+      // Đổi color-title 
+      colorTitle.textContent = product.color[colorIndex].split('').map(char => char.toUpperCase()).join('')
     };
   });
 };
 
+// Hàm xử lý thay đổi Size dựa trên sự kiện click 
+const handleChangeSize = (product) => {
+  const sizeList = $$('.product-size__item')
+  sizeList.forEach((size) => {
+    size.onclick = () => {
+      let sizeIndex = [...sizeList].indexOf(size)
+      productSizeTitle.textContent = product.size[sizeIndex]
+    }
+  })
+}
+
+// Hàm xử lý ẩn hiện Product detail
+const handleChangeDetail = () => {
+  const productDetails = $$('.product-delail__desc')
+  const productDetailBtn = $$('.product-delail__title i')
+  const productDetailTitle = $$('.product-delail__title')
+
+  productDetailTitle.forEach((btn) => {
+    btn.onclick = () => {
+      const detailIndex = [...productDetailTitle].indexOf(btn)
+      const isExpand = productDetails[detailIndex].classList.contains('display');
+
+      productDetails[detailIndex].classList.toggle('display')
+      
+      if (isExpand) {
+        productDetailBtn[detailIndex].classList.replace('fa-minus', 'fa-plus');
+      } else {
+        productDetailBtn[detailIndex].classList.replace('fa-plus', 'fa-minus');
+      }
+    }
+  })
+
+}
+
 renderProductImg(products[0].img[0]);
 renderProductInfo(products[0]);
 renderProductColor(products[0].color);
+renderProductSize(products[0].size)
 handleChangeImg();
 handleChangeImgOnBtn();
-handleChangeColor();
+handleChangeColor(products[0]);
+handleChangeSize(products[0])
+handleChangeDetail()
