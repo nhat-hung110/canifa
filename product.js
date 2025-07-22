@@ -4,41 +4,9 @@
 // 4. Click vào color ==> đổi color-title và đổi ảnh sản phẩm  ==> done
 // 5. Click vào size ==> đổi size-title ==> done
 // 6. Click vào detail-icon ==> đổi icon sang '-' và hiện detail  ==> done
-// 7. Click vào add-btn thì hiện toast "Thêm thành công"
+// 7. Click vào add-btn thì hiện toast "Thêm thành công"  ==> done
 
-products = [
-  {
-    id: 1,
-    title: "Áo khoác chống nắng nữ",
-    price: "549.000 ₫",
-    color: ["navy", "pink", "grey"],
-    size: ["S", "M", "L", "XL"],
-    img: [
-      [
-        "/assets/img/Ao_CN/CN-NU/blue1.webp",
-        "/assets/img/Ao_CN/CN-NU/blue2.webp",
-        "/assets/img/Ao_CN/CN-NU/blue3.webp",
-        "/assets/img/Ao_CN/CN-NU/blue4.webp",
-        "/assets/img/Ao_CN/CN-NU/blue5.webp",
-      ],
-      [
-        "/assets/img/Ao_CN/CN-NU/pink1.webp",
-        "/assets/img/Ao_CN/CN-NU/pink2.webp",
-        "/assets/img/Ao_CN/CN-NU/pink3.webp",
-        "/assets/img/Ao_CN/CN-NU/pink4.webp",
-        "/assets/img/Ao_CN/CN-NU/pink5.webp",
-      ],
-      [
-        "/assets/img/Ao_CN/CN-NU/grey1.webp",
-        "/assets/img/Ao_CN/CN-NU/grey2.webp",
-        "/assets/img/Ao_CN/CN-NU/grey3.webp",
-        "/assets/img/Ao_CN/CN-NU/grey4.webp",
-        "/assets/img/Ao_CN/CN-NU/grey5.webp",
-      ],
-    ],
-  },
-];
-
+const productApi = "http://localhost:3000/";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -54,6 +22,25 @@ const toastWrapper = $(".toast-wrapper");
 
 let currentIndex = 0;
 let navImgList = [];
+
+const productList = ["AoCN", "AoPhong", 'QuanShort', 'SPMoi']
+const productId = 1
+
+fetch(`${productApi}${productList[0]}/${productId}`)
+  .then((response) => response.json())
+  .then((product) => {
+    console.log(product)
+    renderProductImg(product.img[0]);
+    renderProductInfo(product);
+    renderProductColor(product.color);
+    renderProductSize(product.size);
+    handleChangeImg();
+    handleChangeImgOnBtn();
+    handleChangeColor(product);
+    handleChangeSize(product);
+    handleChangeDetail();
+    handleAddProduct();
+  });
 
 // Render ảnh
 const renderProductImg = (imgs) => {
@@ -153,7 +140,7 @@ const handleChangeColor = (product) => {
 
       // Đổi ảnh
       let colorIndex = [...colorList].indexOf(color);
-      renderProductImg(products[0].img[colorIndex]);
+      renderProductImg(product.img[colorIndex]);
       handleChangeImg();
 
       // Đổi color-title
@@ -204,7 +191,8 @@ const handleAddProduct = () => {
   const addBtn = $(".add-product");
 
   addBtn.onclick = () => {
-    const imgSrc = mainImg.src;
+    const navImgs = $$(".nav-img img");
+    const imgSrcArray = [...navImgs].map((img) => img.src);
     const size = productSizeTitle.textContent;
     const color = colorTitle.textContent;
     toastWrapper.innerHTML = `<div class="toast">
@@ -212,7 +200,7 @@ const handleAddProduct = () => {
           <div class="toast-title">Đã thêm vào giỏ hàng</div>
           <div class="toast-product">
             <div class="toast-img">
-              <img src="${imgSrc}" alt="">
+              <img src="${imgSrcArray[0]}" alt="">
             </div>
             <div class="toast-desc">
               <div class="toast-color">Màu: <span>${color}</span></div>
@@ -230,14 +218,3 @@ const handleAddProduct = () => {
     };
   };
 };
-
-renderProductImg(products[0].img[0]);
-renderProductInfo(products[0]);
-renderProductColor(products[0].color);
-renderProductSize(products[0].size);
-handleChangeImg();
-handleChangeImgOnBtn();
-handleChangeColor(products[0]);
-handleChangeSize(products[0]);
-handleChangeDetail();
-handleAddProduct();

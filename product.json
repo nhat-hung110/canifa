@@ -1,0 +1,469 @@
+{
+  "AoCN": [
+    {
+      "id": "1",
+      "title": "Áo khoác chống nắng nữ",
+      "price": "549.000 ₫",
+      "color": ["navy", "pink", "grey"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Ao_CN/CN-NU/blue1.webp",
+          "/assets/img/Ao_CN/CN-NU/blue2.webp",
+          "/assets/img/Ao_CN/CN-NU/blue3.webp",
+          "/assets/img/Ao_CN/CN-NU/blue4.webp",
+          "/assets/img/Ao_CN/CN-NU/blue5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NU/pink1.webp",
+          "/assets/img/Ao_CN/CN-NU/pink2.webp",
+          "/assets/img/Ao_CN/CN-NU/pink3.webp",
+          "/assets/img/Ao_CN/CN-NU/pink4.webp",
+          "/assets/img/Ao_CN/CN-NU/pink5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NU/grey1.webp",
+          "/assets/img/Ao_CN/CN-NU/grey2.webp",
+          "/assets/img/Ao_CN/CN-NU/grey3.webp",
+          "/assets/img/Ao_CN/CN-NU/grey4.webp",
+          "/assets/img/Ao_CN/CN-NU/grey5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Áo khoác chống nắng nữ",
+      "price": "549.000 ₫",
+      "color": ["pink", "grey", "navy"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Ao_CN/CN-NU/pink1.webp",
+          "/assets/img/Ao_CN/CN-NU/pink2.webp",
+          "/assets/img/Ao_CN/CN-NU/pink3.webp",
+          "/assets/img/Ao_CN/CN-NU/pink4.webp",
+          "/assets/img/Ao_CN/CN-NU/pink5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NU/grey1.webp",
+          "/assets/img/Ao_CN/CN-NU/grey2.webp",
+          "/assets/img/Ao_CN/CN-NU/grey3.webp",
+          "/assets/img/Ao_CN/CN-NU/grey4.webp",
+          "/assets/img/Ao_CN/CN-NU/grey5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NU/blue1.webp",
+          "/assets/img/Ao_CN/CN-NU/blue2.webp",
+          "/assets/img/Ao_CN/CN-NU/blue3.webp",
+          "/assets/img/Ao_CN/CN-NU/blue4.webp",
+          "/assets/img/Ao_CN/CN-NU/blue5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Áo khoác chống nắng nam",
+      "price": "549.000 ₫",
+      "color": ["black", "grey", "blue"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Ao_CN/CN-NAM/black1.webp",
+          "/assets/img/Ao_CN/CN-NAM/black2.webp",
+          "/assets/img/Ao_CN/CN-NAM/black3.webp",
+          "/assets/img/Ao_CN/CN-NAM/black4.webp",
+          "/assets/img/Ao_CN/CN-NAM/black5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NAM/grey1.webp",
+          "/assets/img/Ao_CN/CN-NAM/grey2.webp",
+          "/assets/img/Ao_CN/CN-NAM/grey3.webp",
+          "/assets/img/Ao_CN/CN-NAM/grey4.webp",
+          "/assets/img/Ao_CN/CN-NAM/grey5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NAM/blue1.webp",
+          "/assets/img/Ao_CN/CN-NAM/blue2.webp",
+          "/assets/img/Ao_CN/CN-NAM/blue3.webp",
+          "/assets/img/Ao_CN/CN-NAM/blue4.webp",
+          "/assets/img/Ao_CN/CN-NAM/blue5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Áo khoác chống nắng nam",
+      "price": "549.000 ₫",
+      "color": ["grey", "blue", "black"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Ao_CN/CN-NAM/grey1.webp",
+          "/assets/img/Ao_CN/CN-NAM/grey2.webp",
+          "/assets/img/Ao_CN/CN-NAM/grey3.webp",
+          "/assets/img/Ao_CN/CN-NAM/grey4.webp",
+          "/assets/img/Ao_CN/CN-NAM/grey5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NAM/blue1.webp",
+          "/assets/img/Ao_CN/CN-NAM/blue2.webp",
+          "/assets/img/Ao_CN/CN-NAM/blue3.webp",
+          "/assets/img/Ao_CN/CN-NAM/blue4.webp",
+          "/assets/img/Ao_CN/CN-NAM/blue5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NAM/black1.webp",
+          "/assets/img/Ao_CN/CN-NAM/black2.webp",
+          "/assets/img/Ao_CN/CN-NAM/black3.webp",
+          "/assets/img/Ao_CN/CN-NAM/black4.webp",
+          "/assets/img/Ao_CN/CN-NAM/black5.webp"
+        ]
+      ]
+    }
+  ],
+  "AoPhong": [
+    {
+      "id": "5",
+      "title": "Áo phông unisex trẻ em cotton USA có hình in",
+      "price": "199.000 ₫",
+      "color": ["pink", "white"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "./assets/img/AoPhong/AP-KID/AP1-1.webp",
+          "./assets/img/AoPhong/AP-KID/AP1-2.webp",
+          "./assets/img/AoPhong/AP-KID/AP1-3.webp",
+          "./assets/img/AoPhong/AP-KID/AP1-4.webp",
+          "./assets/img/AoPhong/AP-KID/AP1-5.webp"
+        ],
+        [
+          "./assets/img/AoPhong/AP-KID/AP2-1.webp",
+          "./assets/img/AoPhong/AP-KID/AP2-2.webp",
+          "./assets/img/AoPhong/AP-KID/AP2-3.webp",
+          "./assets/img/AoPhong/AP-KID/AP2-4.webp",
+          "./assets/img/AoPhong/AP-KID/AP2-5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Áo phông unisex người lớn có hình in",
+      "price": "349.000 ₫",
+      "color": ["black", "pink", "grey"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/AoPhong/AP-NU/AP1-1.webp",
+          "/assets/img/AoPhong/AP-NU/AP1-2.webp",
+          "/assets/img/AoPhong/AP-NU/AP1-3.webp",
+          "/assets/img/AoPhong/AP-NU/AP1-4.webp",
+          "/assets/img/AoPhong/AP-NU/AP1-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NU/AP2-1.webp",
+          "/assets/img/AoPhong/AP-NU/AP2-2.webp",
+          "/assets/img/AoPhong/AP-NU/AP2-3.webp",
+          "/assets/img/AoPhong/AP-NU/AP2-4.webp",
+          "/assets/img/AoPhong/AP-NU/AP2-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NU/AP3-1.webp",
+          "/assets/img/AoPhong/AP-NU/AP3-2.webp",
+          "/assets/img/AoPhong/AP-NU/AP3-3.webp",
+          "/assets/img/AoPhong/AP-NU/AP3-4.webp",
+          "/assets/img/AoPhong/AP-NU/AP3-5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Áo phông nam cotton USA dáng rộng",
+      "price": "349.000 ₫",
+      "color": ["black", "white", "navy"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/AoPhong/AP-NAM/AP1-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NAM/AP3-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NAM/AP2-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Áo phông nam cotton USA dáng rộng",
+      "price": "349.000 ₫",
+      "color": ["navy", "white", "black"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/AoPhong/AP-NAM/AP2-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NAM/AP3-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NAM/AP1-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-5.webp"
+        ]
+      ]
+    }
+  ],
+  "QuanShort": [
+    {
+      "id": "9",
+      "title": "Quần soóc bé trai cotton USA",
+      "price": "199.000 ₫",
+      "color": ["navy", "blue"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "./assets/img/Quan_short/kid/1-1.webp",
+          "./assets/img/Quan_short/kid/1-2.webp",
+          "./assets/img/Quan_short/kid/1-3.webp",
+          "./assets/img/Quan_short/kid/1-4.webp",
+          "./assets/img/Quan_short/kid/1-5.webp"
+        ],
+        [
+          "./assets/img/Quan_short/kid/2-1.webp",
+          "./assets/img/Quan_short/kid/2-2.webp",
+          "./assets/img/Quan_short/kid/2-3.webp",
+          "./assets/img/Quan_short/kid/2-4.webp",
+          "./assets/img/Quan_short/kid/2-5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Quần soóc nam basic cạp chun",
+      "price": "249.000 ₫",
+      "color": ["navy", "black", "beige"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Quan_short/nam/1-1.webp",
+          "/assets/img/Quan_short/nam/1-2.webp",
+          "/assets/img/Quan_short/nam/1-3.webp",
+          "/assets/img/Quan_short/nam/1-4.webp",
+          "/assets/img/Quan_short/nam/1-5.webp"
+        ],
+        [
+          "/assets/img/Quan_short/nam/2-1.webp",
+          "/assets/img/Quan_short/nam/2-2.webp",
+          "/assets/img/Quan_short/nam/2-3.webp",
+          "/assets/img/Quan_short/nam/2-4.webp",
+          "/assets/img/Quan_short/nam/2-5.webp"
+        ],
+        [
+          "/assets/img/Quan_short/nam/3-1.webp",
+          "/assets/img/Quan_short/nam/3-2.webp",
+          "/assets/img/Quan_short/nam/3-3.webp",
+          "/assets/img/Quan_short/nam/3-4.webp",
+          "/assets/img/Quan_short/nam/3-5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Quần soóc nữ cotton USA cạp chun",
+      "price": "249.000 ₫",
+      "color": ["beige", "white", "black"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Quan_short/nu/1-1.webp",
+          "/assets/img/Quan_short/nu/1-2.webp",
+          "/assets/img/Quan_short/nu/1-3.webp",
+          "/assets/img/Quan_short/nu/1-4.webp",
+          "/assets/img/Quan_short/nu/1-5.webp"
+        ],
+        [
+          "/assets/img/Quan_short/nu/2-1.webp",
+          "/assets/img/Quan_short/nu/2-2.webp",
+          "/assets/img/Quan_short/nu/2-3.webp",
+          "/assets/img/Quan_short/nu/2-4.webp",
+          "/assets/img/Quan_short/nu/2-5.webp"
+        ],
+        [
+          "/assets/img/Quan_short/nu/3-1.webp",
+          "/assets/img/Quan_short/nu/3-1.webp",
+          "/assets/img/Quan_short/nu/3-1.webp",
+          "/assets/img/Quan_short/nu/3-1.webp",
+          "/assets/img/Quan_short/nu/3-1.webp"
+        ]
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Quần soóc active nữ",
+      "price": "249.000 ₫",
+      "color": ["black", "white"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Quan_short/nu/4-1.webp",
+          "/assets/img/Quan_short/nu/4-2.webp",
+          "/assets/img/Quan_short/nu/4-3.webp",
+          "/assets/img/Quan_short/nu/4-4.webp",
+          "/assets/img/Quan_short/nu/4-5.webp"
+        ],
+        [
+          "/assets/img/Quan_short/nu/5-1.webp",
+          "/assets/img/Quan_short/nu/5-2.webp",
+          "/assets/img/Quan_short/nu/5-3.webp",
+          "/assets/img/Quan_short/nu/5-4.webp",
+          "/assets/img/Quan_short/nu/5-5.webp"
+        ]
+      ]
+    }
+  ],
+  "SPMoi": [
+     {
+      "id": "13",
+      "title": "Áo khoác chống nắng nữ",
+      "price": "549.000 ₫",
+      "color": ["pink", "grey", "navy"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Ao_CN/CN-NU/pink1.webp",
+          "/assets/img/Ao_CN/CN-NU/pink2.webp",
+          "/assets/img/Ao_CN/CN-NU/pink3.webp",
+          "/assets/img/Ao_CN/CN-NU/pink4.webp",
+          "/assets/img/Ao_CN/CN-NU/pink5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NU/grey1.webp",
+          "/assets/img/Ao_CN/CN-NU/grey2.webp",
+          "/assets/img/Ao_CN/CN-NU/grey3.webp",
+          "/assets/img/Ao_CN/CN-NU/grey4.webp",
+          "/assets/img/Ao_CN/CN-NU/grey5.webp"
+        ],
+        [
+          "/assets/img/Ao_CN/CN-NU/blue1.webp",
+          "/assets/img/Ao_CN/CN-NU/blue2.webp",
+          "/assets/img/Ao_CN/CN-NU/blue3.webp",
+          "/assets/img/Ao_CN/CN-NU/blue4.webp",
+          "/assets/img/Ao_CN/CN-NU/blue5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Áo phông unisex người lớn có hình in",
+      "price": "349.000 ₫",
+      "color": ["black", "pink", "grey"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/AoPhong/AP-NU/AP1-1.webp",
+          "/assets/img/AoPhong/AP-NU/AP1-2.webp",
+          "/assets/img/AoPhong/AP-NU/AP1-3.webp",
+          "/assets/img/AoPhong/AP-NU/AP1-4.webp",
+          "/assets/img/AoPhong/AP-NU/AP1-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NU/AP2-1.webp",
+          "/assets/img/AoPhong/AP-NU/AP2-2.webp",
+          "/assets/img/AoPhong/AP-NU/AP2-3.webp",
+          "/assets/img/AoPhong/AP-NU/AP2-4.webp",
+          "/assets/img/AoPhong/AP-NU/AP2-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NU/AP3-1.webp",
+          "/assets/img/AoPhong/AP-NU/AP3-2.webp",
+          "/assets/img/AoPhong/AP-NU/AP3-3.webp",
+          "/assets/img/AoPhong/AP-NU/AP3-4.webp",
+          "/assets/img/AoPhong/AP-NU/AP3-5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Áo phông nam cotton USA dáng rộng",
+      "price": "349.000 ₫",
+      "color": ["black", "white", "navy"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/AoPhong/AP-NAM/AP1-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP1-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NAM/AP3-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP3-5.webp"
+        ],
+        [
+          "/assets/img/AoPhong/AP-NAM/AP2-1.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-2.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-3.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-4.webp",
+          "/assets/img/AoPhong/AP-NAM/AP2-5.webp"
+        ]
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Quần soóc nữ cotton USA cạp chun",
+      "price": "249.000 ₫",
+      "color": ["beige", "white", "black"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/Quan_short/nu/1-1.webp",
+          "/assets/img/Quan_short/nu/1-2.webp",
+          "/assets/img/Quan_short/nu/1-3.webp",
+          "/assets/img/Quan_short/nu/1-4.webp",
+          "/assets/img/Quan_short/nu/1-5.webp"
+        ],
+        [
+          "/assets/img/Quan_short/nu/2-1.webp",
+          "/assets/img/Quan_short/nu/2-2.webp",
+          "/assets/img/Quan_short/nu/2-3.webp",
+          "/assets/img/Quan_short/nu/2-4.webp",
+          "/assets/img/Quan_short/nu/2-5.webp"
+        ],
+        [
+          "/assets/img/Quan_short/nu/3-1.webp",
+          "/assets/img/Quan_short/nu/3-1.webp",
+          "/assets/img/Quan_short/nu/3-1.webp",
+          "/assets/img/Quan_short/nu/3-1.webp",
+          "/assets/img/Quan_short/nu/3-1.webp"
+        ]
+      ]
+    }
+  ]
+}
