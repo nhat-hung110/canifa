@@ -65,37 +65,37 @@ productsList.forEach((productsType) => {
       productsBox.forEach((productBox) => {
         if (productBox.classList.contains(productsType)) {
           const html = products
-            .map((product) => renderProduct(product))
+            .map((product) => renderProduct(product, productsType))
             .join("");
           productBox.innerHTML = html;
         }
       });
-      products.forEach((product) => {
-        handleChangeColor(product)})
-    });
+    })
+    .then(() => handleChangeColor());
 });
 
 // Render product color, thêm class current vào color đầu tiên
-const renderProductColor = (colors) => {
-  const html = colors
+// gan thuoc tinh data-img de lay duoc duong dan cac anh theo index color
+const renderProductColor = (colors, productImg) => {
+  return colors
     .map((color, index) => {
       return `
         <div class="product__color-border ${
-          index == 0 ? "product__color--current" : ""
-        }">
-          <div class="product__color-inside product-color--${color} "></div>
+          index === 0 ? "product__color--current" : ""
+        }" 
+             data-img="${productImg[index][0]}">
+          <div class="product__color-inside product-color--${color}"></div>
         </div>
-    `;
+      `;
     })
     .join("");
-  return html;
 };
 
 // Render ra sản phẩm
-const renderProduct = (product) => {
+const renderProduct = (product, type) => {
   return `
     <div class="group-product__item">
-              <a href="product.html">
+              <a href="product.html?type=${type}&id=${product.id}">
                 <div class="product__img ">
                  <img src="${product.img[0][0]}" alt="" />
                   <div class="product__add">
@@ -106,12 +106,11 @@ const renderProduct = (product) => {
                 <div class="product__name">${product.title}</div>
                 <div class="product__price">
                 ${product.price}
-                <span> đ</span>
                 </div>
                 </div>
                 </a>
                 <div class="product__color">
-                  ${renderProductColor(product.color)}
+                  ${renderProductColor(product.color, product.img)} 
                 </div>
             </div>`;
 };
@@ -120,25 +119,30 @@ const renderProduct = (product) => {
 //1. Lay danh sach mau toan bo san pham => done
 //2. Khi click lay the cha dang chua color do => done
 //3. Lay san pham chua color => done
-//4. Lay anh cua san pham hien tai => done
+//4. Lay src anh cua san pham hien tai => done
 
-const handleChangeColor = (product) => {
+const handleChangeColor = () => {
   const colorList = $$(".product__color-border");
 
   colorList.forEach((color) => {
     color.onclick = () => {
       const productColorList = color.parentElement;
-      const productColor = productColorList.querySelectorAll(".product__color-border");
-      
-      productColor.forEach((c) => c.classList.remove("product__color--current"));
+      const productColor = productColorList.querySelectorAll(
+        ".product__color-border"
+      );
+
+      // Đổi class active
+      productColor.forEach((c) =>
+        c.classList.remove("product__color--current")
+      );
       color.classList.add("product__color--current");
-      
+
+      // Đổi ảnh chính
       const productItem = color.closest(".group-product__item");
-      const mainImg = productItem.querySelector(".product__img img"); 
+      const mainImg = productItem.querySelector(".product__img img");
+      const newImg = color.getAttribute("data-img");
 
-      console.log(product.img)
-    }
-  })
+      mainImg.src = newImg;
+    };
+  });
 };
-
-

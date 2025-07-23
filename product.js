@@ -23,13 +23,13 @@ const toastWrapper = $(".toast-wrapper");
 let currentIndex = 0;
 let navImgList = [];
 
-const productList = ["AoCN", "AoPhong", 'QuanShort', 'SPMoi']
-const productId = 1
+const urlParams = new URLSearchParams(window.location.search);
+const productType = urlParams.get("type");
+const productId = urlParams.get("id");
 
-fetch(`${productApi}${productList[0]}/${productId}`)
-  .then((response) => response.json())
+fetch(`${productApi}${productType}/${productId}`)
+  .then((res) => res.json())
   .then((product) => {
-    console.log(product)
     renderProductImg(product.img[0]);
     renderProductInfo(product);
     renderProductColor(product.color);
@@ -39,7 +39,7 @@ fetch(`${productApi}${productList[0]}/${productId}`)
     handleChangeColor(product);
     handleChangeSize(product);
     handleChangeDetail();
-    handleAddProduct();
+    handleAddProduct(product);
   });
 
 // Render ảnh
@@ -64,10 +64,7 @@ const renderProductImg = (imgs) => {
 const renderProductInfo = (product) => {
   productTitle.textContent = product.title;
   productPrice.textContent = product.price;
-  colorTitle.textContent = product.color[0]
-    .split("")
-    .map((char) => char.toUpperCase())
-    .join("");
+  colorTitle.textContent = product.color[0].toUpperCase()
   productSizeTitle.textContent = product.size[0];
 };
 
@@ -144,10 +141,7 @@ const handleChangeColor = (product) => {
       handleChangeImg();
 
       // Đổi color-title
-      colorTitle.textContent = product.color[colorIndex]
-        .split("")
-        .map((char) => char.toUpperCase())
-        .join("");
+      colorTitle.textContent = product.color[colorIndex].toUpperCase()
     };
   });
 };
@@ -196,25 +190,31 @@ const handleAddProduct = () => {
     const size = productSizeTitle.textContent;
     const color = colorTitle.textContent;
     toastWrapper.innerHTML = `<div class="toast">
-        <div class="toast-text">
-          <div class="toast-title">Đã thêm vào giỏ hàng</div>
-          <div class="toast-product">
-            <div class="toast-img">
-              <img src="${imgSrcArray[0]}" alt="">
-            </div>
-            <div class="toast-desc">
-              <div class="toast-color">Màu: <span>${color}</span></div>
-              <div class="toast-size">Size: <span>${size}</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="toast-icon"><i class="fa-solid fa-xmark"></i></div>
-      </div>
-      `;
-
+    <div class="toast-text">
+    <div class="toast-title">Đã thêm vào giỏ hàng</div>
+    <div class="toast-product">
+    <div class="toast-img">
+    <img src="${imgSrcArray[0]}" alt="">
+    </div>
+    <div class="toast-desc">
+    <div class="toast-color">Màu: <span>${color}</span></div>
+    <div class="toast-size">Size: <span>${size}</span></div>
+    </div>
+    </div>
+    </div>
+    <div class="toast-icon"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+    `;
+    
     const closeToast = $(".toast-icon");
     closeToast.onclick = () => {
       toastWrapper.innerHTML = "";
     };
+    console.log(colorTitle.textContent.toLowerCase(), imgSrcArray[0] ,productSizeTitle.textContent, productId) // Lay size, anh, mau, id sp dang chon
   };
 };
+
+// Them san pham vao gio hang
+// 1. Lay id, mau, size san pham dang chon
+// 2. Post len 1 API
+// 3. Tu API lay ve va render ra gio hang, neu san pham da co thi +1
