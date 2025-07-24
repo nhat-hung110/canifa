@@ -22,25 +22,11 @@ const toastWrapper = $(".toast-wrapper");
 
 let currentIndex = 0;
 let navImgList = [];
+let addedProduct = JSON.parse(localStorage.getItem("cart")) || [];
 
 const urlParams = new URLSearchParams(window.location.search);
 const productType = urlParams.get("type");
 const productId = urlParams.get("id");
-
-fetch(`${productApi}${productType}/${productId}`)
-  .then((res) => res.json())
-  .then((product) => {
-    renderProductImg(product.img[0]);
-    renderProductInfo(product);
-    renderProductColor(product.color);
-    renderProductSize(product.size);
-    handleChangeImg();
-    handleChangeImgOnBtn();
-    handleChangeColor(product);
-    handleChangeSize(product);
-    handleChangeDetail();
-    handleAddProduct(product);
-  });
 
 // Render ảnh
 const renderProductImg = (imgs) => {
@@ -64,7 +50,7 @@ const renderProductImg = (imgs) => {
 const renderProductInfo = (product) => {
   productTitle.textContent = product.title;
   productPrice.textContent = product.price;
-  colorTitle.textContent = product.color[0].toUpperCase()
+  colorTitle.textContent = product.color[0].toUpperCase();
   productSizeTitle.textContent = product.size[0];
 };
 
@@ -141,7 +127,7 @@ const handleChangeColor = (product) => {
       handleChangeImg();
 
       // Đổi color-title
-      colorTitle.textContent = product.color[colorIndex].toUpperCase()
+      colorTitle.textContent = product.color[colorIndex].toUpperCase();
     };
   });
 };
@@ -200,21 +186,175 @@ const handleAddProduct = () => {
     <div class="toast-color">Màu: <span>${color}</span></div>
     <div class="toast-size">Size: <span>${size}</span></div>
     </div>
+    <div class="toast-btn">
+                <div>Xem giỏ hàng</div>
+            </div>
     </div>
     </div>
     <div class="toast-icon"><i class="fa-solid fa-xmark"></i></div>
     </div>
     `;
-    
+
     const closeToast = $(".toast-icon");
     closeToast.onclick = () => {
       toastWrapper.innerHTML = "";
     };
-    console.log(colorTitle.textContent.toLowerCase(), imgSrcArray[0] ,productSizeTitle.textContent, productId) // Lay size, anh, mau, id sp dang chon
+
+    $(".toast-btn").onclick = () => {
+      const displayCartCheckbox = document.getElementById("display_cart");
+      displayCartCheckbox.checked = true; 
+      toastWrapper.innerHTML = "";
+    };
+
+    const addProduct = {
+      id: productId,
+      title: productTitle.textContent,
+      color: colorTitle.textContent,
+      size: productSizeTitle.textContent,
+      price: productPrice.textContent,
+      img: imgSrcArray[0],
+      quantity: 1,
+    };
+
+    const existingProduct = addedProduct.find(
+      (product) =>
+        product.id === addProduct.id &&
+        product.color === addProduct.color &&
+        product.size === addProduct.size
+    );
+
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      addedProduct.push(addProduct);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(addedProduct));
+    renderCart(addedProduct);
   };
 };
 
 // Them san pham vao gio hang
-// 1. Lay id, mau, size san pham dang chon
-// 2. Post len 1 API
-// 3. Tu API lay ve va render ra gio hang, neu san pham da co thi +1
+// 1. Lay id, mau, src anh, size san pham dang chon => done
+// 2. Gan vao 1 array, luu vao localstorage => done
+// 3. render ra giỏ hàng, nếu trùng thì +1 => done
+
+// Ham render cart:
+// Chua co san pham thi render gio hang trong
+// Co san pham thi render tung san pham bang ham renderCartProduct
+// Nhan nut X de xoa san pham khoi gio hang
+// Nhan + de tang so luong, - de giam so luong
+const renderCart = (productList) => {
+  const cartBox = $(".cart__box");
+  const totalQuantity = productList.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
+
+  if (productList.length == 0) {
+    cartBox.innerHTML = `
+<div class="cart__title">
+  <span>Giỏ hàng (0)</span>
+  <label for="display_cart"><i class="fa-solid fa-x"></i></label>
+</div>
+<div class="cart__img">
+  <img src="./assets/img/cart/cart-empty.png" alt="" />
+</div>
+<div class="cart__text">
+  <span>Hiện chưa có sản phẩm trong giỏ hàng</span>
+</div>
+<label for="display_cart">
+  <div class="cart__button">
+    <span>Tiếp tục mua sắm</span>
+  </div>
+</label>`;
+  } else {
+    cartBox.innerHTML = `
+    <div class="cart__title">
+      <span>Giỏ hàng (${totalQuantity})</span>
+      <label for="display_cart"
+        ><i class="fa-solid fa-x"></i
+      ></label>
+    </div>
+    ${renderCartProduct(productList)}`;
+  }
+  handleEditCart();
+};
+
+const renderCartProduct = (productList) => {
+  return productList
+    .map((product, index) => {
+      return `
+    <div class="cart-product" >
+      <div class="cart-product__img">
+        <img src="${product.img}" alt="" />
+      </div>
+      <div class="cart-product__info">
+        <div class="cart-product__title">${product.title}</div>
+        <div class="cart-product__price">${product.price}</div>
+        <div class="cart-product__color">Màu: ${product.color}</div>
+        <div class="cart-product__size">Size: ${product.size}</div>
+      </div>
+      <div class="cart-product__btn">
+        <div class="cart-product__close-btn"><i class="fa-regular fa-trash-can"></i></div>
+        <div class="cart-product__quantity-btn">
+          <button class="decrease" data-index = ${index}>-</button>
+          <span>${product.quantity}</span>
+          <button class="increase" data-index = ${index}>+</button>
+        </div>
+      </div>
+    </div>`;
+    })
+    .join("");
+};
+
+const handleEditCart = () => {
+  const deleteBtns = $$(".cart-product__close-btn");
+  const increaseBtns = $$(".increase");
+  const decreaseBtns = $$(".decrease");
+
+  deleteBtns.forEach((btn, index) => {
+    btn.onclick = () => {
+      addedProduct.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(addedProduct));
+      renderCart(addedProduct);
+    };
+  });
+
+  increaseBtns.forEach((btn, index) => {
+    btn.onclick = () => {
+      addedProduct[index].quantity += 1;
+      localStorage.setItem("cart", JSON.stringify(addedProduct));
+      renderCart(addedProduct);
+    };
+  });
+
+  decreaseBtns.forEach((btn, index) => {
+    btn.onclick = () => {
+      addedProduct[index].quantity -= 1;
+      localStorage.setItem("cart", JSON.stringify(addedProduct));
+      renderCart(addedProduct);
+      if (addedProduct[index].quantity == 0) {
+        addedProduct.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(addedProduct));
+        renderCart(addedProduct);
+      }
+    };
+  });
+};
+
+fetch(`${productApi}${productType}/${productId}`)
+  .then((res) => res.json())
+  .then((product) => {
+    renderProductImg(product.img[0]);
+    renderProductInfo(product);
+    renderProductColor(product.color);
+    renderProductSize(product.size);
+    handleChangeImg();
+    handleChangeImgOnBtn();
+    handleChangeColor(product);
+    handleChangeSize(product);
+    handleChangeDetail();
+    handleAddProduct(product);
+  });
+renderCart(addedProduct);

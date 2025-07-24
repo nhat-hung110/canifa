@@ -223,7 +223,7 @@
   }
 }
 
-@keyframes fadeOut {
+/* @keyframes fadeOut {
   from {
     transform: translateX(0);
     opacity: 1;
@@ -232,7 +232,7 @@
     transform: translateX(100%);
     opacity: 0;
   }
-}
+} */
 
 .toast::before {
   content: "";
@@ -255,27 +255,27 @@
   padding-top: 12px;
 }
 
-.toast-product{
-display: flex;
-padding:12px 0 12px;
-align-items: center;
+.toast-product {
+  display: flex;
+  padding: 12px 0 12px;
+  align-items: center;
 }
 
-.toast-img{
-padding-right: 12px;
-height: 100%;
-width: 40px;
+.toast-img {
+  padding-right: 12px;
+  height: 100%;
+  width: 40px;
 }
 
-.toast-img img{
+.toast-img img {
   object-fit: cover;
 }
 
-.toast-desc{
-font-size: 13px;
+.toast-desc {
+  font-size: 13px;
 }
 
-.toast-desc span{
+.toast-desc span {
   font-weight: 600;
 }
 
@@ -286,4 +286,89 @@ font-size: 13px;
 
 .toast-icon:active {
   color: #999;
+}
+
+.toast-btn{
+  padding: 6px 12px;
+  border: 1px solid var(--product-button-color);
+border-radius: 3px;
+font-size: 16px;
+color: var(--product-button-color);
+cursor: pointer;
+margin-left: 24px;
+}
+
+.toast-btn:active{
+  background-color: var(--product-button-color);
+  color: #fff;
+}
+
+.cart-product {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid #999;
+}
+
+.cart-product__img {
+  width: 48px;
+  border: 1px solid #999;
+}
+
+.cart-product__img img {
+  object-fit: cover;
+}
+
+.cart-product__info {
+  flex: 1;
+  padding-left: 14px;
+  font-size: 14px;
+}
+
+.cart-product__title {
+}
+
+.cart-product__price {
+  color: rgb(223, 1, 1);
+}
+
+.cart-product__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.cart-product__close-btn {
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgb(227, 39, 39);
+}
+
+.cart-product__close-btn:active {
+  color: #999;
+}
+
+.cart-product__quantity-btn {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.cart-product__quantity-btn span {
+  padding: 0 12px;
+}
+
+.cart-product__quantity-btn button {
+  border: none;
+  font-size: 18px;
+  width: 24px;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.cart-product__quantity-btn button:active {
+  background-color: #dcdcdc;
 }
