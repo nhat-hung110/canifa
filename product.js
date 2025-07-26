@@ -202,7 +202,7 @@ const handleAddProduct = () => {
 
     $(".toast-btn").onclick = () => {
       const displayCartCheckbox = document.getElementById("display_cart");
-      displayCartCheckbox.checked = true; 
+      displayCartCheckbox.checked = true;
       toastWrapper.innerHTML = "";
     };
 
@@ -250,6 +250,17 @@ const renderCart = (productList) => {
     (sum, product) => sum + product.quantity,
     0
   );
+  const priceArr = productList.map((product) => {
+    return Number(product.price.replace("₫", "").replaceAll(".", "").trim());
+  });
+  const totalPrice = () => {
+    let total = 0;
+    for (let i = 0; i < productList.length; i++) {
+      total += productList[i].quantity * priceArr[i];
+    }
+    return total;
+  };
+  const formattedPrice = totalPrice().toLocaleString("vi-VN");
 
   if (productList.length == 0) {
     cartBox.innerHTML = `
@@ -276,9 +287,23 @@ const renderCart = (productList) => {
         ><i class="fa-solid fa-x"></i
       ></label>
     </div>
-    ${renderCartProduct(productList)}`;
+    <div class="cart-product__list">
+    ${renderCartProduct(productList)}
+    </div>
+    <div class="cart-pay">
+      <div class="cart-price">Tổng cộng: <span>${formattedPrice} ₫</span> </div>
+      <div class="cart-pay-btn">Thanh toán</div>
+    </div>`;
   }
   handleEditCart();
+  displayPayment();
+
+  const info = {
+    name: "Nguyễn Nhật Hưng",
+    number: "0369215306",
+    price: formattedPrice,
+  };
+  handlePayment(info);
 };
 
 const renderCartProduct = (productList) => {
@@ -341,6 +366,43 @@ const handleEditCart = () => {
       }
     };
   });
+};
+
+const displayPayment = () => {
+  const payBtn = $(".cart-pay-btn");
+  const payBox = $(".confirm-pay-wrapper");
+  payBtn.onclick = () => {
+    payBox.classList.add("active");
+  };
+};
+
+const handlePayment = (info) => {
+  const payBox = $(".confirm-pay-wrapper");
+  const payInfo = $(".confirm-info");
+  const payBtn = $(".confirm-pay");
+  const closeBtn = $(".confirm-close");
+
+  payInfo.innerHTML = `
+  <div>Tài khoản: <span>${info.name}</span></div>
+  <div>SĐT: <span>${info.number}</span></div>
+  <div>Số tiền: <span>${info.price}</span></div>`;
+
+  payBtn.onclick = () => {
+    payInfo.innerHTML = `<div class="pay-success">
+            <span>Thanh toán thành công</span> <br>
+            <span>Cảm ơn bạn đã lựa chọn Canifa!</span>
+          </div>`;
+    payBtn.classList.remove("active");
+    addedProduct = [];
+    localStorage.setItem("cart", JSON.stringify(addedProduct));
+    renderCart(addedProduct);
+  };
+
+  closeBtn.onclick = () => {
+    payBox.classList.remove("active");
+  };
+
+  payBtn.classList.add("active");
 };
 
 fetch(`${productApi}${productType}/${productId}`)
