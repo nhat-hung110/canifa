@@ -141,6 +141,7 @@ header {
   display: none;
 }
 
+
 #display_cart,
 #display_user-box {
   display: none;
@@ -152,8 +153,7 @@ header {
 }
 
 #display_cart:not(:checked) ~ .cart__wrapper,
-#display_user-box:not(:checked) ~ .user-box__wrapper{
-
+#display_user-box:not(:checked) ~ .user-box__wrapper {
 }
 
 .cart__background,
@@ -180,33 +180,33 @@ header {
   animation: SlideIn ease-in 0.2s;
 }
 
-@keyframes SlideIn{
-  from{
+@keyframes SlideIn {
+  from {
     transform: translateX(100%);
     opacity: 0;
   }
-  to{
+  to {
     transform: translateX(0%);
     opacity: 1;
   }
 }
 
-@keyframes Appear{
-  from{
+@keyframes Appear {
+  from {
     scale: 0;
     opacity: 0;
   }
-  to{
+  to {
     scale: 1;
     opacity: 1;
   }
 }
 
-@keyframes FadeIn{
-  from{
+@keyframes FadeIn {
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
@@ -249,21 +249,12 @@ header {
   cursor: pointer;
 }
 
-
-.user-box__title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 2.8rem;
-  width: 100%;
-  padding: 14px 25px;
-}
-
 .user-box__box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 48%;
+  width: 38%;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -274,10 +265,9 @@ header {
   transform-origin: 0 0;
 }
 
-.user-box__title i {
-  float: right;
-  padding: 8px;
-  cursor: pointer;
+.sign-in-box {
+  display: flex;
+  flex-direction: column;
 }
 
 .user-box__content {
@@ -285,47 +275,127 @@ header {
   display: flex;
   flex-direction: column;
   color: var(--text-dark-color);
+  width: 100%;
+  flex: 1;
 }
 
-.user-box__img {
+.user-box__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.user-box__container span,
+.user-box__container label {
+  font-size: 14px;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.user-box__content input {
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid #999;
+}
+
+.user-box__content input.invalid{
+  border: 1px solid var(--product-button-color);
 }
 
 .user-box__heading {
   font-size: 2.4rem;
   line-height: 3rem;
   font-weight: 700;
-  padding: 25px 0 15px;
+  padding: 18px 0 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.user-box__text {
-  font-size: 1.4rem;
-  line-height: 2.2rem;
-  padding-bottom: 15px;
+.user-box-title {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  color: #a6a6a6;
+  cursor: pointer;
 }
 
-.user-box__input {
-  padding: 12px;
-  outline: none;
-  color: var(--text-light-color);
-  font-weight: 500;
-  font-size: 1.4rem;
+.user-box-title span.active{
+  color: var(--text-dark-color);
 }
 
-.user-box__submit {
-  padding: 12px;
-  color: #fff;
-  background-color: var(--product-button-color);
-  border: none;
-  font-size: 1.6rem;
+.sign-in-wrapper, .sign-up-wrapper, .succes-sign-up{
+  display: none;
+}
+
+.sign-in-wrapper.active, .sign-up-wrapper.active, .succes-sign-up.active{
+  display: block;
+}
+
+.sign-up-wrapper .message{
+  color: var(--product-button-color);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.sign-in-box,
+.sign-up-box,
+.password-box,
+.fullname-box,
+.confirm-password-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-input {
+}
+
+.sign-in-mesage {
+  color: var(--product-button-color);
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 8px;
+  display: none;
+}
+
+.sign-in-btn, .sign-up-btn, .to-sign-up-btn {
+  padding: 10px;
+  border: 1px solid var(--product-button-color);
+  border-radius: 3px;
+  font-size: 18px;
   font-weight: 600;
-  margin: 10px 0 14px;
+  background-color: var(--product-button-color);
+  color: #fff;
+  cursor: pointer;
+  margin-right: 12px;
+  text-align: center;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.sign-in-btn:active, .sign-up-btn:active, .to-sign-up-btn:active {
+  color: var(--product-button-color);
+  background-color: #fff;
 }
 
 .user-box__policy {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
+  margin-top: 8px;
 }
 
+.user-box__policy span {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+.sign-up-test{
+  text-align: center;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  color: var(--product-button-color);
+}
 /* Product menu */
 .category_women-product,
 .category_men-product,
