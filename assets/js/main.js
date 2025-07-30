@@ -1,9 +1,25 @@
+import {
+  addedProduct,
+  renderCart,
+  renderCartProduct,
+  handleEditCart,
+  displayPayment,
+  handlePayment,
+  handleSignInBox,
+  validForm,
+  updateUserInfo,
+  getUserInfo,
+  handleSignIn,
+  handleLogOut,
+  checkLoginStatus,
+} from "./product.js";
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const productApi = "http://localhost:3000/";
 
 // Trượt banner
-const slideBanner = () => {
+
   const listBanner = $(".list-banner");
   const banners = $$(".list-banner a");
   const rightBtn = $(".banner__right-btn");
@@ -46,9 +62,7 @@ const slideBanner = () => {
     $(".index-banner--active")?.classList.remove("index-banner--active");
     indexBanner[currentIndex].classList.add("index-banner--active");
   };
-};
 
-slideBanner();
 
 // Lay san pham tu API ==> done
 // Render san pham vao tung box:
@@ -145,4 +159,13 @@ const handleChangeColor = () => {
       mainImg.src = newImg;
     };
   });
+};
+
+export {
+  $,
+  $$,
+  productApi,
+  renderProductColor,
+  renderProduct,
+  handleChangeColor,
 };

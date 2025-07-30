@@ -141,7 +141,6 @@ header {
   display: none;
 }
 
-
 #display_cart,
 #display_user-box {
   display: none;
@@ -277,6 +276,20 @@ header {
   color: var(--text-dark-color);
   width: 100%;
   flex: 1;
+  display: none;
+}
+
+.user-box__content.active {
+  display: flex;
+}
+
+.user-box__content.user-info {
+  display: none;
+  padding: 0 30px 30px;
+}
+
+.user-box__content.user-info.active {
+  display: flex;
 }
 
 .user-box__container {
@@ -299,7 +312,7 @@ header {
   border: 1px solid #999;
 }
 
-.user-box__content input.invalid{
+.user-box__content input.invalid {
   border: 1px solid var(--product-button-color);
 }
 
@@ -321,19 +334,23 @@ header {
   cursor: pointer;
 }
 
-.user-box-title span.active{
+.user-box-title span.active {
   color: var(--text-dark-color);
 }
 
-.sign-in-wrapper, .sign-up-wrapper, .succes-sign-up{
+.sign-in-wrapper,
+.sign-up-wrapper,
+.succes-sign-up {
   display: none;
 }
 
-.sign-in-wrapper.active, .sign-up-wrapper.active, .succes-sign-up.active{
+.sign-in-wrapper.active,
+.sign-up-wrapper.active,
+.succes-sign-up.active {
   display: block;
 }
 
-.sign-up-wrapper .message{
+.message {
   color: var(--product-button-color);
   font-size: 12px;
   font-style: italic;
@@ -356,10 +373,12 @@ header {
   font-style: italic;
   font-weight: 400;
   margin-bottom: 8px;
-  display: none;
 }
 
-.sign-in-btn, .sign-up-btn, .to-sign-up-btn {
+.sign-in-btn,
+.sign-up-btn,
+.to-sign-up-btn,
+.log-out-btn {
   padding: 10px;
   border: 1px solid var(--product-button-color);
   border-radius: 3px;
@@ -374,7 +393,10 @@ header {
   margin-top: 12px;
 }
 
-.sign-in-btn:active, .sign-up-btn:active, .to-sign-up-btn:active {
+.sign-in-btn:active,
+.sign-up-btn:active,
+.to-sign-up-btn:active,
+.log-out-btn:active {
   color: var(--product-button-color);
   background-color: #fff;
 }
@@ -389,11 +411,26 @@ header {
   font-weight: 400;
 }
 
-.sign-up-test{
+.sign-up-test {
   text-align: center;
   font-size: 18px;
   line-height: 26px;
   font-weight: 500;
+  color: var(--product-button-color);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 0;
+}
+
+.user-info span {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
   color: var(--product-button-color);
 }
 /* Product menu */

@@ -19,11 +19,8 @@
     <link rel="stylesheet" href="./assets/css/container.css" />
     <link rel="stylesheet" href="./assets/css/footer.css" />
     <link rel="stylesheet" href="./assets/css/tag_container.css" />
-    <link
-      rel="icon"
-      href="./assets/img/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="stylesheet" href="./assets/css/product.css" />
+    <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon" />
     <title>Canifa</title>
   </head>
   <body>
@@ -536,43 +533,137 @@
               <label class="user-box__background" for="display_user-box">
               </label>
               <div class="user-box__box">
-                <div class="user-box__title">
-                  <label for="display_user-box">
-                    <i class="fa-solid fa-x"></i>
-                  </label>
-                </div>
-                <div class="user-box__content">
-                  <img
-                    src="./assets/img/user_box/Slide55-web_desktop.png"
-                    alt=""
-                    class="user-box__img"
-                  />
+                <div class="user-box__content active">
                   <div class="user-box__heading">
-                    <span>Đăng nhập</span>
+                    <div class="user-box-title">
+                      <span class="sign-in active">Đăng nhập</span>
+                      <span class="sign-up">Đăng ký</span>
+                    </div>
+                    <label for="display_user-box">
+                      <i class="fa-solid fa-x"></i>
+                    </label>
                   </div>
-                  <div class="user-box__text">
-                    <span
-                      >Đăng nhập miễn phí để trở thành Khách hàng thân thiết và
-                      nhận ưu đãi độc quyền từ CANIFA.</span
-                    >
+                  <div class="user-box__container">
+                    <div class="sign-in-wrapper active">
+                      <div class="sign-in-box">
+                        <img
+                          src="./assets/img/user_box/Slide55-web_desktop.png"
+                          alt=""
+                          class="user-box__img"
+                        />
+                        <label for="sign-in-input">Nhập SĐT</label>
+                        <input
+                          id="sign-in-input"
+                          type="text"
+                          placeholder="Số điện thoại"
+                        />
+                        <div class="message"></div>
+                      </div>
+                      <div class="password-box">
+                        <label for="sign-in-password-input"
+                          >Nhập mật khẩu</label
+                        >
+                        <input
+                          id="sign-in-password-input"
+                          type="password"
+                          placeholder="Mật khẩu"
+                        />
+                        <div class="message"></div>
+                      </div>
+                      <span class="sign-in-mesage"></span>
+                      <div class="sign-in-btn">Đăng nhập</div>
+                      <div class="user-box__policy">
+                        <span
+                          >* Khi ấn đăng nhập, bạn xác nhận đã đọc và đồng ý với
+                          Điều khoản dịch vụ cùng Chính sách bảo mật của
+                          Canifa.</span
+                        >
+                      </div>
+                    </div>
+                    <div class="sign-up-wrapper">
+                      <div class="sign-up-box">
+                        <label for="number-sign-up-input">Nhập SĐT</label>
+                        <input
+                          id="number-sign-up-input"
+                          type="text"
+                          placeholder="Số điện thoại"
+                        />
+                        <div class="message"></div>
+                      </div>
+                      <div class="fullname-box">
+                        <label for="fullname-input">Nhập họ tên</label>
+                        <input
+                          id="fullname-input"
+                          type="text"
+                          placeholder="Họ tên"
+                        />
+                        <div class="message"></div>
+                      </div>
+                      <div class="password-box">
+                        <label for="sign-up-password-input"
+                          >Nhập mật khẩu</label
+                        >
+                        <input
+                          id="sign-up-password-input"
+                          type="password"
+                          placeholder="Mật khẩu"
+                        />
+                        <div class="message"></div>
+                      </div>
+                      <div class="confirm-password-box">
+                        <label for="confirm-password-input"
+                          >Nhập lại mật khẩu</label
+                        >
+                        <input
+                          id="confirm-password-input"
+                          type="password"
+                          placeholder="Mật khẩu"
+                        />
+                        <div class="message"></div>
+                      </div>
+                      <div class="sign-up-btn">Đăng ký</div>
+                      <div class="user-box__policy">
+                        <span
+                          >* Khi ấn đăng ký, bạn xác nhận đã đọc và đồng ý với
+                          Điều khoản dịch vụ cùng Chính sách bảo mật của
+                          Canifa.</span
+                        >
+                      </div>
+                    </div>
+                    <div class="succes-sign-up">
+                      <div class="sign-up-test">
+                        Đăng ký tài khoản thành công!
+                      </div>
+                      <br />
+                      <div class="sign-up-test">
+                        Hãy đăng nhập để sử dụng các tiện ích của Canifa
+                      </div>
+                      <div class="to-sign-up-btn">Đăng nhập</div>
+                    </div>
                   </div>
-                  <input
-                    class="user-box__input"
-                    type="tel"
-                    placeholder="Vui lòng nhập số điện thoại"
-                    required
-                    pattern="[0-9]{10}"
-                  />
-                  <input
-                    class="user-box__submit"
-                    type="submit"
-                    value="Tiếp tục"
-                  />
-                  <div class="user-box__policy">
-                    <span
-                      >* Khi ấn tiếp tục, bạn xác nhận đã đọc và đồng ý với Điều
-                      khoản dịch vụ cùng Chính sách bảo mật của Canifa.</span
-                    >
+                </div>
+                <div class="user-box__content user-info">
+                  <div class="user-box__heading">
+                    <div class="user-box-title">
+                      <span class="sign-in active">Thông tin tài khoản</span>
+                    </div>
+                    <label for="display_user-box">
+                      <i class="fa-solid fa-x"></i>
+                    </label>
+                  </div>
+                  <div class="user-box__container">
+                    <div class="sign-in-wrapper active">
+                      <img
+                        src="./assets/img/user_box/Slide55-web_desktop.png"
+                        alt=""
+                        class="user-box__img"
+                      />
+                      <div class="user-info">
+                        <div class="user-name">Tài khoản: <span></span></div>
+                        <div class="user-number">SĐT: <span></span></div>
+                      </div>
+                      <div class="log-out-btn">Đăng xuất</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -586,27 +677,22 @@
             <input type="checkbox" id="display_cart" />
             <div class="cart__wrapper">
               <label class="cart__background" for="display_cart"></label>
-              <div class="cart__box">
-                <div class="cart__title">
-                  <span>Giỏ hàng (0)</span>
-                  <label for="display_cart"
-                    ><i class="fa-solid fa-x"></i
-                  ></label>
-                </div>
-                <div class="cart__img">
-                  <img src="./assets/img/cart/cart-empty.png" alt="" />
-                </div>
-                <div class="cart__text">
-                  <span>Hiện chưa có sản phẩm trong giỏ hàng</span>
-                </div>
-                <label for="display_cart">
-                  <div class="cart__button">
-                    <span>Tiếp tục mua sắm</span>
-                  </div>
-                </label>
-              </div>
+              <div class="cart__box"></div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="confirm-pay-wrapper">
+      <div class="confirm-pay-box">
+        <div class="confirm-title">
+          <div>Xác nhận thanh toán</div>
+        </div>
+        <div class="confirm-info"></div>
+        <div class="confirm-btn">
+          <div class="confirm-close">Đóng</div>
+          <div class="confirm-pay active">Thanh toán</div>
         </div>
       </div>
     </div>
@@ -690,136 +776,8 @@
             <div class="tag-product__banner">
               <img src="./assets/img/women_tag/AoPhong/banner.webp" alt="" />
             </div>
-            <div class="tag-product__list">
-              <div class="tag-product__left-icon">
-                <i class="fa-solid fa-arrow-left"></i>
-              </div>
-              <div class="tag-product__right-icon">
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
-              <div class="group-product__item">
-                <a href="">
-                  <div class="product__img">
-                    <img src="./assets/img/women_tag/AoPhong/1.webp" alt="" />
-                    <div class="product__add">
-                      <span>Thêm nhanh vào giỏ</span>
-                    </div>
-                  </div>
-                  <div class="product__info">
-                    <div class="product__color">
-                      <div
-                        class="product__color-border product__color--current"
-                      >
-                        <div
-                          class="product__color-inside product-color--purple"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--grey"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--pink"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--white"
-                        ></div>
-                      </div>
-                    </div>
-                    <div class="product__name">Áo phông nữ</div>
-                    <div class="product__price">
-                      199.000
-                      <span> đ</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="group-product__item">
-                <a href="">
-                  <div class="product__img">
-                    <img src="./assets/img/women_tag/AoPhong/2.webp" alt="" />
-                    <div class="product__add">
-                      <span>Thêm nhanh vào giỏ</span>
-                    </div>
-                  </div>
-                  <div class="product__info">
-                    <div class="product__color">
-                      <div
-                        class="product__color-border product__color--current"
-                      >
-                        <div
-                          class="product__color-inside product-color--white"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--grey"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--pink"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--blue"
-                        ></div>
-                      </div>
-                    </div>
-                    <div class="product__name">Áo phông nữ dài tay</div>
-                    <div class="product__price">
-                      399.000
-                      <span> đ</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="group-product__item last-item">
-                <a href="">
-                  <div class="product__img">
-                    <img src="./assets/img/women_tag/AoPhong/3.webp" alt="" />
-                    <div class="product__add">
-                      <span>Thêm nhanh vào giỏ</span>
-                    </div>
-                  </div>
-                  <div class="product__info">
-                    <div class="product__color">
-                      <div
-                        class="product__color-border product__color--current"
-                      >
-                        <div
-                          class="product__color-inside product-color--white"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--grey"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--pink"
-                        ></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div
-                          class="product__color-inside product-color--blue"
-                        ></div>
-                      </div>
-                    </div>
-                    <div class="product__name">Áo phông nữ dài tay</div>
-                    <div class="product__price">
-                      399.000
-                      <span> đ</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
+            <div class="tag-product__list AoPhong">
+              
             </div>
           </div>
         </div>
@@ -1296,67 +1254,83 @@
               </a>
             </div>
             <div class="group-product__item">
-                <a href="">
-                  <div class="product__img">
-                    <img src="./assets/img/women_tag/quan/1.webp" alt="">
-                    <div class="product__add">
-                      <span>Thêm nhanh vào giỏ</span>
+              <a href="">
+                <div class="product__img">
+                  <img src="./assets/img/women_tag/quan/1.webp" alt="" />
+                  <div class="product__add">
+                    <span>Thêm nhanh vào giỏ</span>
+                  </div>
+                </div>
+                <div class="product__info">
+                  <div class="product__color">
+                    <div class="product__color-border product__color--current">
+                      <div
+                        class="product__color-inside product-color--white"
+                      ></div>
+                    </div>
+                    <div class="product__color-border">
+                      <div
+                        class="product__color-inside product-color--grey"
+                      ></div>
+                    </div>
+                    <div class="product__color-border">
+                      <div
+                        class="product__color-inside product-color--pink"
+                      ></div>
+                    </div>
+                    <div class="product__color-border">
+                      <div
+                        class="product__color-inside product-color--purple"
+                      ></div>
                     </div>
                   </div>
-                  <div class="product__info">
-                    <div class="product__color">
-                      <div class="product__color-border product__color--current">
-                        <div class="product__color-inside product-color--white"></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div class="product__color-inside product-color--grey"></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div class="product__color-inside product-color--pink"></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div class="product__color-inside product-color--purple"></div>
-                      </div>
+                  <div class="product__name">Quần soóc nữ</div>
+                  <div class="product__price">
+                    379.000
+                    <span> đ</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="group-product__item">
+              <a href="">
+                <div class="product__img">
+                  <img src="./assets/img/women_tag/quan/2.webp" alt="" />
+                  <div class="product__add">
+                    <span>Thêm nhanh vào giỏ</span>
+                  </div>
+                </div>
+                <div class="product__info">
+                  <div class="product__color">
+                    <div class="product__color-border product__color--current">
+                      <div
+                        class="product__color-inside product-color--black"
+                      ></div>
                     </div>
-                    <div class="product__name">Quần soóc nữ</div>
-                    <div class="product__price">
-                      379.000
-                      <span> đ</span>
+                    <div class="product__color-border">
+                      <div
+                        class="product__color-inside product-color--grey"
+                      ></div>
+                    </div>
+                    <div class="product__color-border">
+                      <div
+                        class="product__color-inside product-color--pink"
+                      ></div>
+                    </div>
+                    <div class="product__color-border">
+                      <div
+                        class="product__color-inside product-color--blue"
+                      ></div>
                     </div>
                   </div>
-                </a>
-              </div>
-              <div class="group-product__item">
-                <a href="">
-                  <div class="product__img">
-                    <img src="./assets/img/women_tag/quan/2.webp" alt="">
-                    <div class="product__add">
-                      <span>Thêm nhanh vào giỏ</span>
-                    </div>
+                  <div class="product__name">Quần soóc nữ</div>
+                  <div class="product__price">
+                    379.000
+                    <span> đ</span>
                   </div>
-                  <div class="product__info">
-                    <div class="product__color">
-                      <div class="product__color-border product__color--current">
-                        <div class="product__color-inside product-color--black"></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div class="product__color-inside product-color--grey"></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div class="product__color-inside product-color--pink"></div>
-                      </div>
-                      <div class="product__color-border">
-                        <div class="product__color-inside product-color--blue"></div>
-                      </div>
-                    </div>
-                    <div class="product__name">Quần soóc nữ</div>
-                    <div class="product__price">
-                      379.000
-                      <span> đ</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
+                </div>
+              </a>
+            </div>
           </div>
           <div class="group-product__button">
             <button>Xem tất cả</button>
@@ -1453,5 +1427,6 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="./assets/js/women_tag.js"></script>
   </body>
 </html>

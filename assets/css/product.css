@@ -411,18 +411,18 @@
 
 .cart-pay-btn {
   padding: 10px 50px;
-  border: 1px solid var(--product-button-color);
   border-radius: 3px;
   font-size: 18px;
   font-weight: 600;
-  color: var(--product-button-color);
   cursor: pointer;
   margin-right: 12px;
+  background-color: var(--product-button-color);
+  color: #fff;
 }
 
 .cart-pay-btn:active {
-  background-color: var(--product-button-color);
-  color: #fff;
+  border: 1px solid var(--product-button-color);
+  color: var(--product-button-color);
 }
 
 .confirm-pay-wrapper {
@@ -516,9 +516,9 @@
 }
 
 .confirm-pay {
-  border: 1px solid var(--product-button-color);
+  background-color: var(--product-button-color);
   font-size: 16px;
-  color: var(--product-button-color);
+  color: #fff;
   cursor: pointer;
   margin-left: 24px;
   display: none;
@@ -529,8 +529,9 @@
 }
 
 .confirm-pay:active {
-  background-color: var(--product-button-color);
-  color: #fff;
+  background-color: #fff;
+  color: var(--product-button-color);
+  border: solid 1px var(--product-button-color);
 }
 
 .pay-success{

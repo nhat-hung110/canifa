@@ -7,6 +7,7 @@
 // 7. Click vào add-btn thì hiện toast "Thêm thành công"  ==> done
 
 const productApi = "http://localhost:3000/";
+const userApi = "http://localhost:3000/user";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -371,9 +372,11 @@ const handleEditCart = () => {
 const displayPayment = () => {
   const payBtn = $(".cart-pay-btn");
   const payBox = $(".confirm-pay-wrapper");
-  payBtn.onclick = () => {
+  if(payBox && payBtn) {
+    payBtn.onclick = () => {
     payBox.classList.add("active");
   };
+  }
 };
 
 const handlePayment = (info) => {
@@ -381,22 +384,38 @@ const handlePayment = (info) => {
   const payInfo = $(".confirm-info");
   const payBtn = $(".confirm-pay");
   const closeBtn = $(".confirm-close");
+  const isLogin = JSON.parse(localStorage.getItem("isLogin"));
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const signInBox = $("#display_user-box");
+  const cartBox = $("#display_cart");
 
-  payInfo.innerHTML = `
-  <div>Tài khoản: <span>${info.name}</span></div>
-  <div>SĐT: <span>${info.number}</span></div>
-  <div>Số tiền: <span>${info.price}</span></div>`;
+  if (isLogin && currentUser) {
+    payInfo.innerHTML = `
+  <div>Tài khoản: <span>${currentUser.user}</span></div>
+  <div>SĐT: <span>${currentUser.number}</span></div>
+  <div>Số tiền: <span>${info.price} đồng</span></div>`;
 
-  payBtn.onclick = () => {
-    payInfo.innerHTML = `<div class="pay-success">
+    payBtn.textContent = `Thanh toán`;
+    payBtn.onclick = () => {
+      payInfo.innerHTML = `<div class="pay-success">
             <span>Thanh toán thành công</span> <br>
             <span>Cảm ơn bạn đã lựa chọn Canifa!</span>
           </div>`;
-    payBtn.classList.remove("active");
-    addedProduct = [];
-    localStorage.setItem("cart", JSON.stringify(addedProduct));
-    renderCart(addedProduct);
-  };
+      payBtn.classList.remove("active");
+      addedProduct = [];
+      localStorage.setItem("cart", JSON.stringify(addedProduct));
+      renderCart(addedProduct);
+    };
+  } else {
+    payInfo.innerHTML = `
+  <div>Bạn phải <span>đăng nhập tài khoản</span> để thanh toán</div>`;
+    payBtn.textContent = `Đăng nhập`;
+    payBtn.onclick = () => {
+      signInBox.checked = true;
+      cartBox.checked = false;
+      payBox.classList.remove("active");
+    };
+  }
 
   closeBtn.onclick = () => {
     payBox.classList.remove("active");
@@ -405,7 +424,7 @@ const handlePayment = (info) => {
   payBtn.classList.add("active");
 };
 
-const handleSignIn = () => {
+const handleSignInBox = () => {
   const signInBtn = $(".user-box-title .sign-in");
   const signUpBtn = $(".user-box-title .sign-up");
   const signInBox = $(".sign-in-wrapper");
@@ -431,13 +450,15 @@ const handleSignIn = () => {
 // Kiểm tra SĐT => done
 // Kiểm tra độ dài => done
 // Kiểm tra mật khẩu nhập lại => done
-const validSignUpForm = () => {
+const validForm = () => {
   const signUpInputs = $$(".sign-up-wrapper input");
   const numberInput = $("#number-sign-up-input");
-  const nameInput = $('#fullname-input')
+  const nameInput = $("#fullname-input");
   const passwordInput = $("#sign-up-password-input");
   const confirmPasswordInput = $("#confirm-password-input");
   const signUpBtn = $(".sign-up-btn");
+  const signInBtn = $(".sign-in-btn");
+  const signInInputs = $$(".sign-in-wrapper input");
 
   const showError = (input, message) => {
     const parentElement = input.parentElement;
@@ -495,8 +516,20 @@ const validSignUpForm = () => {
     };
   });
 
+  signInInputs.forEach((input) => {
+    input.onblur = () => validForm(input);
+    input.oninput = () => {
+      showError(input, "");
+      input.classList.remove("invalid");
+    };
+  });
+
   // Nếu có input invalid thì hiển thị lỗi
   // Nếu tất cả đã valid thì hiển thị đăng ký thành công và post dữ liệu lên API
+  signInBtn.onclick = () => {
+    signInInputs.forEach((input) => validForm(input));
+  };
+
   signUpBtn.onclick = () => {
     signUpInputs.forEach((input) => validForm(input));
 
@@ -505,13 +538,14 @@ const validSignUpForm = () => {
     );
 
     if (!hasInvalidInput) {
-      const userInfo ={
+      const userInfo = {
         number: numberInput.value,
         user: nameInput.value,
-        password: passwordInput.value
-      }
-      console.log(userInfo)
-      updateUserInfo(userInfo)
+        password: passwordInput.value,
+      };
+
+      updateUserInfo(userInfo);
+
       signUpInputs.forEach((input) => (input.value = ""));
 
       const toSignUpBtn = $(".to-sign-up-btn");
@@ -534,23 +568,129 @@ const validSignUpForm = () => {
   };
 };
 
-const updateUserInfo = (data) => {}
+const updateUserInfo = (data) => {
+  fetch(userApi, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((response) => response.json());
+};
 
-validSignUpForm();
-handleSignIn();
+// hàm xử lý đăng nhập:
+// Get userApi để lấy đúng user và mk ==> done
+// Đăng nhập thành công: lưu user vào local storage, hiển thị tên tài khoản và số điện thoại
+// Đăng xuất: xóa dữ liệu khỏi local storage và trả lại giao diện đăng nhập
 
-fetch(`${productApi}${productType}/${productId}`)
-  .then((res) => res.json())
-  .then((product) => {
-    renderProductImg(product.img[0]);
-    renderProductInfo(product);
-    renderProductColor(product.color);
-    renderProductSize(product.size);
-    handleChangeImg();
-    handleChangeImgOnBtn();
-    handleChangeColor(product);
-    handleChangeSize(product);
-    handleChangeDetail();
-    handleAddProduct(product);
-  });
-renderCart(addedProduct);
+const getUserInfo = () => {
+  return fetch(userApi).then((response) => response.json());
+};
+
+const handleSignIn = () => {
+  const errorElement = $(".sign-in-mesage");
+  const signInBtn = $(".sign-in-btn");
+  const signInBox = $(".user-box__content");
+  const userInfoBox = $(".user-box__content.user-info");
+  const userName = $(".user-name span");
+  const userNumber = $(".user-number span");
+
+  signInBtn.onclick = () => {
+    const number = $("#sign-in-input").value.trim();
+    const password = $("#sign-in-password-input").value.trim();
+    if (!number || !password) {
+      errorElement.innerHTML = `Số điện thoại và mật khẩu không được để trống`;
+    } else {
+      getUserInfo().then((users) => {
+        const matchedUser = users.find(
+          (user) => user.number == number && user.password == password
+        );
+        if (matchedUser) {
+          localStorage.setItem("currentUser", JSON.stringify(matchedUser));
+          localStorage.setItem("isLogin", JSON.stringify(true));
+          errorElement.innerHTML = "";
+          signInBox.classList.remove("active");
+          userInfoBox.classList.add("active");
+          userName.innerHTML = matchedUser.user;
+          userNumber.innerHTML = matchedUser.number;
+          alert("Đăng nhập thành công");
+          renderCart(addedProduct);
+        } else {
+          errorElement.innerHTML = `*Số điện thoại hoặc mật khẩu không đúng`;
+        }
+      });
+    }
+  };
+};
+
+const handleLogOut = () => {
+  const logOutBtn = $(".log-out-btn");
+  const signInBox = $(".user-box__content");
+  const userInfoBox = $(".user-box__content.user-info");
+
+  logOutBtn.onclick = () => {
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("isLogin");
+
+    userInfoBox.classList.remove("active");
+    signInBox.classList.add("active");
+    renderCart(addedProduct);
+  };
+};
+
+const checkLoginStatus = () => {
+  const isLogin = JSON.parse(localStorage.getItem("isLogin"));
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const signInBox = $(".user-box__content");
+  const userInfoBox = $(".user-box__content.user-info");
+  const userName = $(".user-name span");
+  const userNumber = $(".user-number span");
+
+  if (isLogin && currentUser) {
+    signInBox.classList.remove("active");
+    userInfoBox.classList.add("active");
+    userName.innerHTML = currentUser.user;
+    userNumber.innerHTML = currentUser.number;
+  }
+};
+
+const start = () => {
+  fetch(`${productApi}${productType}/${productId}`)
+    .then((res) => res.json())
+    .then((product) => {
+      renderProductImg(product.img[0]);
+      renderProductInfo(product);
+      renderProductColor(product.color);
+      renderProductSize(product.size);
+      handleChangeColor(product);
+      handleChangeSize(product);
+      handleAddProduct(product);
+      handleChangeImg();
+      handleChangeImgOnBtn();
+    });
+  handleChangeDetail();
+  renderCart(addedProduct);
+  validForm();
+  handleSignInBox();
+  handleSignIn();
+  checkLoginStatus();
+  handleLogOut();
+};
+
+start()
+
+export {
+  addedProduct,
+  renderCart,
+  renderCartProduct,
+  handleEditCart,
+  displayPayment,
+  handlePayment,
+  handleSignInBox,
+  validForm,
+  updateUserInfo,
+  getUserInfo,
+  handleSignIn,
+  handleLogOut,
+  checkLoginStatus,
+}

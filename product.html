@@ -537,7 +537,7 @@
               <label class="user-box__background" for="display_user-box">
               </label>
               <div class="user-box__box">
-                <div class="user-box__content">
+                <div class="user-box__content active">
                   <div class="user-box__heading">
                     <div class="user-box-title">
                       <span class="sign-in active">Đăng nhập</span>
@@ -561,6 +561,7 @@
                           type="text"
                           placeholder="Số điện thoại"
                         />
+                        <div class="message"></div>
                       </div>
                       <div class="password-box">
                         <label for="sign-in-password-input"
@@ -571,9 +572,10 @@
                           type="password"
                           placeholder="Mật khẩu"
                         />
+                        <div class="message"></div>
                       </div>
                       <span class="sign-in-mesage"
-                        >* Số điện thoại hoặc mật khẩu không đúng</span
+                        ></span
                       >
                       <div class="sign-in-btn">Đăng nhập</div>
                       <div class="user-box__policy">
@@ -645,6 +647,30 @@
                         </div>
                         <div class="to-sign-up-btn">Đăng nhập</div>
                       </div>
+                  </div>
+                </div>
+                <div class="user-box__content user-info">
+                  <div class="user-box__heading">
+                    <div class="user-box-title">
+                      <span class="sign-in active">Thông tin tài khoản</span>
+                    </div>
+                    <label for="display_user-box">
+                      <i class="fa-solid fa-x"></i>
+                    </label>
+                  </div>
+                  <div class="user-box__container">
+                    <div class="sign-in-wrapper active">
+                      <img
+                          src="./assets/img/user_box/Slide55-web_desktop.png"
+                          alt=""
+                          class="user-box__img"
+                        />
+                      <div class="user-info">
+                        <div class="user-name">Tài khoản: <span></span></div>
+                        <div class="user-number">SĐT: <span></span></div>
+                      </div>
+                      <div class="log-out-btn">Đăng xuất</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -837,6 +863,6 @@
       </div>
     </footer>
 
-    <script src="./product.js"></script>
+    <script type="module" src="./assets/js/product.js"></script>
   </body>
 </html>

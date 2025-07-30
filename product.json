@@ -1,5 +1,12 @@
 {
-  "user": [],
+  "user": [
+    {
+      "id": "54b6",
+      "number": "0369215306",
+      "user": "Nguyễn Nhật Hưng",
+      "password": "123456"
+    }
+  ],
   "AoCN": [
     {
       "id": "1",
@@ -314,10 +321,10 @@
         ],
         [
           "/assets/img/Quan_short/nu/3-1.webp",
-          "/assets/img/Quan_short/nu/3-1.webp",
-          "/assets/img/Quan_short/nu/3-1.webp",
-          "/assets/img/Quan_short/nu/3-1.webp",
-          "/assets/img/Quan_short/nu/3-1.webp"
+          "/assets/img/Quan_short/nu/3-2.webp",
+          "/assets/img/Quan_short/nu/3-3.webp",
+          "/assets/img/Quan_short/nu/3-4.webp",
+          "/assets/img/Quan_short/nu/3-5.webp"
         ]
       ]
     },
@@ -346,7 +353,7 @@
     }
   ],
   "SPMoi": [
-     {
+    {
       "id": "13",
       "title": "Áo khoác chống nắng nữ",
       "price": "549.000 ₫",
@@ -459,11 +466,104 @@
         ],
         [
           "/assets/img/Quan_short/nu/3-1.webp",
-          "/assets/img/Quan_short/nu/3-1.webp",
-          "/assets/img/Quan_short/nu/3-1.webp",
-          "/assets/img/Quan_short/nu/3-1.webp",
-          "/assets/img/Quan_short/nu/3-1.webp"
+          "/assets/img/Quan_short/nu/3-2.webp",
+          "/assets/img/Quan_short/nu/3-3.webp",
+          "/assets/img/Quan_short/nu/3-4.webp",
+          "/assets/img/Quan_short/nu/3-5.webp"
         ]
+      ]
+    }
+  ],
+  "AoPhongNu": [
+    {
+      "id": "17",
+      "title": "Áo phông nữ basic",
+      "price": "199.000 ₫",
+      "color": ["purple", "grey", "pink"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/women_tag/AoPhong/AP1-1.webp",
+          "/assets/img/women_tag/AoPhong/AP1-2.webp",
+          "/assets/img/women_tag/AoPhong/AP1-3.webp",
+          "/assets/img/women_tag/AoPhong/AP1-4.webp",
+          "/assets/img/women_tag/AoPhong/AP1-5.webp"
+        ],
+        [
+          "/assets/img/women_tag/AoPhong/AP1-6.webp",
+          "/assets/img/women_tag/AoPhong/AP1-7.webp",
+          "/assets/img/women_tag/AoPhong/AP1-8.webp",
+          "/assets/img/women_tag/AoPhong/AP1-9.webp",
+          "/assets/img/women_tag/AoPhong/AP1-10.webp"
+        ],
+        [
+          "/assets/img/women_tag/AoPhong/AP1-11.webp",
+          "/assets/img/women_tag/AoPhong/AP1-12.webp",
+          "/assets/img/women_tag/AoPhong/AP1-13.webp",
+          "/assets/img/women_tag/AoPhong/AP1-14.webp",
+          "/assets/img/women_tag/AoPhong/AP1-15.webp"
+        ]
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Áo phông nữ basic",
+      "price": "199.000 ₫",
+      "color": ["pink", "purple", "grey"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/women_tag/AoPhong/AP1-11.webp",
+          "/assets/img/women_tag/AoPhong/AP1-12.webp",
+          "/assets/img/women_tag/AoPhong/AP1-13.webp",
+          "/assets/img/women_tag/AoPhong/AP1-14.webp",
+          "/assets/img/women_tag/AoPhong/AP1-15.webp"
+        ],
+        [
+          "/assets/img/women_tag/AoPhong/AP1-1.webp",
+          "/assets/img/women_tag/AoPhong/AP1-2.webp",
+          "/assets/img/women_tag/AoPhong/AP1-3.webp",
+          "/assets/img/women_tag/AoPhong/AP1-4.webp",
+          "/assets/img/women_tag/AoPhong/AP1-5.webp"
+        ],
+        [
+          "/assets/img/women_tag/AoPhong/AP1-6.webp",
+          "/assets/img/women_tag/AoPhong/AP1-7.webp",
+          "/assets/img/women_tag/AoPhong/AP1-8.webp",
+          "/assets/img/women_tag/AoPhong/AP1-9.webp",
+          "/assets/img/women_tag/AoPhong/AP1-10.webp"
+        ]
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Áo phông nữ basic",
+      "price": "199.000 ₫",
+      "color": ["grey", "pink", "purple"],
+      "size": ["S", "M", "L", "XL"],
+      "img": [
+        [
+          "/assets/img/women_tag/AoPhong/AP1-6.webp",
+          "/assets/img/women_tag/AoPhong/AP1-7.webp",
+          "/assets/img/women_tag/AoPhong/AP1-8.webp",
+          "/assets/img/women_tag/AoPhong/AP1-9.webp",
+          "/assets/img/women_tag/AoPhong/AP1-10.webp"
+        ],
+        [
+          "/assets/img/women_tag/AoPhong/AP1-11.webp",
+          "/assets/img/women_tag/AoPhong/AP1-12.webp",
+          "/assets/img/women_tag/AoPhong/AP1-13.webp",
+          "/assets/img/women_tag/AoPhong/AP1-14.webp",
+          "/assets/img/women_tag/AoPhong/AP1-15.webp"
+        ],
+        [
+          "/assets/img/women_tag/AoPhong/AP1-1.webp",
+          "/assets/img/women_tag/AoPhong/AP1-2.webp",
+          "/assets/img/women_tag/AoPhong/AP1-3.webp",
+          "/assets/img/women_tag/AoPhong/AP1-4.webp",
+          "/assets/img/women_tag/AoPhong/AP1-5.webp"
+        ]
+        
       ]
     }
   ]
