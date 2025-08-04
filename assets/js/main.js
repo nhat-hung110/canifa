@@ -12,7 +12,7 @@ const slideBanner = () => {
   const indexBanner = $$(".index-banner__item");
   let currentIndex = 0;
   const bannerWidth = banners[0]?.offsetWidth || 0;
-  if (listBanner && banners.length === 0 && rightBtn && leftBtn) {
+  if (listBanner && rightBtn && leftBtn) {
     const handleChangeBanner = () => {
       currentIndex++;
       if (currentIndex >= banners.length) {
