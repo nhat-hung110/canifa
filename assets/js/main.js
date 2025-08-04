@@ -1,68 +1,55 @@
-import {
-  addedProduct,
-  renderCart,
-  renderCartProduct,
-  handleEditCart,
-  displayPayment,
-  handlePayment,
-  handleSignInBox,
-  validForm,
-  updateUserInfo,
-  getUserInfo,
-  handleSignIn,
-  handleLogOut,
-  checkLoginStatus,
-} from "./product.js";
-
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const productApi = "http://localhost:3000/";
 
 // Trượt banner
 
+const slideBanner = () => {
   const listBanner = $(".list-banner");
   const banners = $$(".list-banner a");
   const rightBtn = $(".banner__right-btn");
   const leftBtn = $(".banner__left-btn");
   const indexBanner = $$(".index-banner__item");
-  const bannerWidth = banners[0].offsetWidth;
   let currentIndex = 0;
+  const bannerWidth = banners[0]?.offsetWidth || 0;
+  if (listBanner && banners.length === 0 && rightBtn && leftBtn) {
+    const handleChangeBanner = () => {
+      currentIndex++;
+      if (currentIndex >= banners.length) {
+        currentIndex = 0;
+      }
+      const offset = -currentIndex * bannerWidth;
+      listBanner.style.transform = `translateX(${offset}px)`;
+      updateIndicator();
+    };
 
-  const handleChangeBanner = () => {
-    currentIndex++;
-    if (currentIndex >= banners.length) {
-      currentIndex = 0;
-    }
-    const offset = -currentIndex * bannerWidth;
-    listBanner.style.transform = `translateX(${offset}px)`;
-    updateIndicator();
-  };
+    let handleAutoChangeBanner = setInterval(handleChangeBanner, 4000);
 
-  let handleAutoChangeBanner = setInterval(handleChangeBanner, 4000);
+    rightBtn.onclick = () => {
+      clearInterval(handleAutoChangeBanner);
+      handleChangeBanner();
+      handleAutoChangeBanner = setInterval(handleChangeBanner, 4000);
+    };
 
-  rightBtn.onclick = () => {
-    clearInterval(handleAutoChangeBanner);
-    handleChangeBanner();
-    handleAutoChangeBanner = setInterval(handleChangeBanner, 4000);
-  };
+    leftBtn.onclick = () => {
+      clearInterval(handleAutoChangeBanner);
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = banners.length - 1;
+      }
+      const offset = -currentIndex * bannerWidth;
+      listBanner.style.transform = `translateX(${offset}px)`;
+      handleAutoChangeBanner = setInterval(handleChangeBanner, 4000);
+      updateIndicator();
+    };
 
-  leftBtn.onclick = () => {
-    clearInterval(handleAutoChangeBanner);
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = banners.length - 1;
-    }
-    const offset = -currentIndex * bannerWidth;
-    listBanner.style.transform = `translateX(${offset}px)`;
-    handleAutoChangeBanner = setInterval(handleChangeBanner, 4000);
-    updateIndicator();
-  };
-
-  const updateIndicator = () => {
-    $(".index-banner--active")?.classList.remove("index-banner--active");
-    indexBanner[currentIndex].classList.add("index-banner--active");
-  };
-
+    const updateIndicator = () => {
+      $(".index-banner--active")?.classList.remove("index-banner--active");
+      indexBanner[currentIndex].classList.add("index-banner--active");
+    };
+  }
+};
+slideBanner();
 
 // Lay san pham tu API ==> done
 // Render san pham vao tung box:
@@ -155,7 +142,6 @@ const handleChangeColor = () => {
       const productItem = color.closest(".group-product__item");
       const mainImg = productItem.querySelector(".product__img img");
       const newImg = color.getAttribute("data-img");
-
       mainImg.src = newImg;
     };
   });
@@ -165,7 +151,7 @@ export {
   $,
   $$,
   productApi,
-  renderProductColor,
   renderProduct,
+  renderProductColor,
   handleChangeColor,
 };

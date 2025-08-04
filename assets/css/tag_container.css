@@ -202,29 +202,26 @@
 
 .tag-product__content {
   display: flex;
+  width: 100%;
 }
 
 .tag-product__banner {
-  width: 33.333%;
+  width: 28%;
   margin-right: 14px;
 }
 
 .tag-product__list {
   display: flex;
-  width: 66.667%;
+  width: 72%;
   position: relative;
   overflow: hidden;
+  flex-wrap: nowrap;
 }
 
 .tag-product__list .group-product__item {
   width: 38%;
 }
 
-.last-item {
-  position: absolute;
-  top: 0;
-  left: 76%;
-}
 
 .tag-product__left-icon,
 .tag-product__right-icon {

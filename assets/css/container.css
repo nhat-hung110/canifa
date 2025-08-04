@@ -366,6 +366,10 @@
   background-color: var(--product-purple-color);
 }
 
+.product-color--yellow {
+  background-color: var(--product-yellow-color);
+}
+
 .product-color--green {
   background-color: var(--product-green-color);
 }
